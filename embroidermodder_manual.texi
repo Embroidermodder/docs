@@ -1,0 +1,28 @@
+\input texinfo
+@setfilename embroidermodder.info
+@include version.texi
+@settitle The Embroidermodder @value{VERSION} Manual
+
+@titlepage
+@title The Embroidermodder Project Manual
+@subtitle for Embroidermodder @value{VERSION}, libembroidery and all related projects
+@author The Embroidermodder Team
+@end titlepage
+
+@menu
+* Introduction::
+* Usage::
+* Dependencies::
+@end menu
+
+@chapter Introduction
+
+@section Usage
+
+@section Dependencies
+
+@appendix GNU Free Documentation License
+
+@include fdl.texi
+
+@bye
