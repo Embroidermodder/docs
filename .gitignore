@@ -1,0 +1,9 @@
+*.aux
+*.blg
+*.bbl
+*.cp
+*.cps
+*.log
+*.out
+*.toc
+stor.html
