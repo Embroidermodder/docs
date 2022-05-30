@@ -15,8 +15,8 @@ build_page libembroidery/README.md libembroidery.html
 build_page index.md index.html
 build_page downloads.md downloads.html
 
-pandoc ../README.md \
+pandoc README_embroidermodder.md \
     embroidermodder_1.90.0_developer_notes.pdf
 pandoc documentation.md \
     embroidermodder_1.90.0_user_manual.pdf
-pandoc libembroidery/README.md libembroidery_0.1_manual.pdf
+pandoc README_libembroidery.md libembroidery_0.1_manual.pdf
