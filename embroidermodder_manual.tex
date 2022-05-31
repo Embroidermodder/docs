@@ -3,8 +3,22 @@
 \usepackage{amsmath}
 \usepackage{mathpazo}
 \usepackage{natbib}
-\usepackage{hyperref}
 \usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+
+\usepackage[english]{babel} %language selection
+\selectlanguage{english}
+
+\pagenumbering{arabic}
+
+\usepackage{hyperref}
+\hypersetup{colorlinks, 
+           citecolor=black,
+           filecolor=black,
+           linkcolor=black,
+           urlcolor=black,
+           bookmarksopen=true,
+           pdftex}
 
 \newcommand{\emversion}{2.0.0-alpha}
 \newcommand{\libembversion}{1.0.0-alpha}
@@ -523,14 +537,14 @@ Can we treat the website being a duplicate of the docs a non-starter?
 I'd be happier with tex/pdf only and (I know this is counter-intuitive) one
 per project.
 
-\subsubsection OpenGL
+\subsubsection{OpenGL}
 
 OpenGL rendering within the application. This will allow for
 Realistic Visualization - Bump Mapping/OpenGL/Gradients?
 
 This should backend to a C renderer or something.
 
-\subsubsection Configuration Data Ideas
+\subsubsection{Configuration Data Ideas}
 
 embroidermodder should boot from the command line
 regardless of whether it is or is not installed (this helps with testing and
@@ -591,11 +605,11 @@ https://developer.android.com/studio/projects/add-native-code
 
     apt install google-android-ndk-installer cmake lldb gradle
 
-\section Libembroidery v1.0-alpha Manual
+\chapter{Libembroidery v1.0-alpha Manual}
 
 (Under construction, please wait for v1.0 release.)
 
-\subsection 1.1. What is libembroidery?
+\subsection{What is libembroidery?}
 
 libembroidery is a low-level library for reading, writing, 
 and altering digital embroidery files in C.
@@ -1720,55 +1734,54 @@ or fitting to images/graphics.
 13. <a name="13"></a> Google et al. "Google Java Style Guide" [https://google.github.io/styleguide/javaguide.html](https://google.github.io/styleguide/javaguide.html) (Accessed April 2022)
 \end{verbatim}
 
-# Embroidermodder v2.0-alpha Manual
+\chapter{Embroidermodder v2.0-alpha Manual}
 
-## Abstract
+\section{Abstract}
 
 
+\section{Table of Contents}
 
-## Table of Contents
+* [Abstract](abstract)
+* [Abstract](features)
 
-* [Abstract](#abstract)
-* [Abstract](#features)
-
-## Features
+\section{Features}
 
 Embroidermodder 2 has many advanced features that enable you to create awesome designs quicker, tweak existing designs to perfection, and can be fully customized to fit your workflow.
 
 A summary of these features:
 
-* [Cross Platform](#cross-platform)
-* [Realistic rendering](#anchorRealRender)
-* [Various grid types and auto-adjusting rulers](#anchorGridRuler)
-* [Many measurement tools](#anchorMultiMeasure)
-* [Add text to any design](#anchorText)
-* [Supports many formats](#anchorFormats)
-* [Batch Conversion](#anchorBatch)
-* [Scripting API](#anchorScriptingAPI)
+* [Cross Platform](cross-platform)
+* [Realistic rendering](anchorRealRender)
+* [Various grid types and auto-adjusting rulers](anchorGridRuler)
+* [Many measurement tools](anchorMultiMeasure)
+* [Add text to any design](anchorText)
+* [Supports many formats](anchorFormats)
+* [Batch Conversion](anchorBatch)
+* [Scripting API](anchorScriptingAPI)
 
-### Cross Platform
+\subsection{Cross Platform}
 
 If you use multiple operating systems, it's important to choose software that works on all of them.
 
-Embroidermodder 2 runs on Windows, Linux and Mac OS X. Let's not forget the <a href="http://www.raspberrypi.org">Raspberry Pi</a>.
+Embroidermodder 2 runs on Windows, Linux and Mac OS X. Let's not forget the Raspberry Pi (\url{http://www.raspberrypi.org}).
 
 <a href="images/features-platforms-1.png"><img class="img" src="images/features-platforms-1.png"></a>
 
-### Realistic Rendering
+\subsection{Realistic Rendering}
 
 <a name="anchorRealRender"></a>
 
 It is important to be able to visualize what a design will look like when stitched and our pseudo "3D" realistic rendering helps achieve this.
 
-Realistic rendering sample #1:
+Realistic rendering sample \#1:
 
 <a href="images/features-realrender-1.png"><img class="img" src="images/features-realrender-1.png"></a>
 
-Realistic rendering sample #2:
+Realistic rendering sample \#2:
 
 <a href="images/features-realrender-2.png"><img class="img" src="images/features-realrender-2.png"></a>
 
-Realistic rendering sample #3:
+Realistic rendering sample \#3:
 
 <a href="images/features-realrender-3.png"><img class="img" src="images/features-realrender-3.png"></a>
 
@@ -1781,7 +1794,7 @@ Use rectangular, circular or isometric grids to construct your masterpiece!
 Multiple grids and rulers in action:
 <a href="images/features-grid-ruler-1.png"><img class="img" src="images/features-grid-ruler-1.png"></a>
 
-## Many measurement tools
+\subsection{Many measurement tools}
 <a name="anchorMultiMeasure"></a>
 
 Taking measurements is a critical part of creating great designs. Whether you are designing mission critical embroidered space suits for NASA or some other far out design for your next meet-up, you will have precise measurement tools at your command to make it happen. You can locate individual points or find distances between any 2 points anywhere in the design!
@@ -1790,23 +1803,25 @@ Take quick and accurate measurements:
 
 <a href="images/features-measure-1.png"><img class="img" src="images/features-measure-1.png"></a>
 
-## Add text to any design
+\subsection{Add text to any design}
 <a name="anchorText"></a>
+
 <div class="content-filler">
 Need to make company apparel for all of your employees with individual names on them? No sweat. Just simply add text to your existing design or create one from scratch, quickly and easily.
 Didn't get it the right size or made a typo? No problem. Just select the text and update it with the property editor.
 
 Add text and adjust its properties quickly:
+
 <a href="images/features-text-1.png"><img class="img" src="images/features-text-1.png"></a>
 
-## Supports many formats
+\subsection{Supports many formats}
 <a name="anchorFormats"></a>
 
 Embroidery machines all accept different formats. There are so many formats available that it can sometimes be confusing whether a design will work with your machine.
 
 Embroidermodder 2 supports a wide variety of embroidery formats as well as several vector formats, such as SVG and DXF. This allows you to worry less about which designs you can use.
 
-## Batch Conversion
+\subsection{Batch Conversion}
 <a name="anchorBatch"></a>
 
 Need to send a client several different formats? Just use libembroidery-convert, our command line utility which supports batch file conversion.
@@ -1814,18 +1829,19 @@ Need to send a client several different formats? Just use libembroidery-convert,
 There are a multitude of formats to choose from:
 <a href="images/features-formats-1.png"><img class="img" src="images/features-formats-1.png"></a>
 
-## Scripting API
+\subsection{Scripting API}
+
 <a name="anchorScriptingAPI"></a>
 
 If you've got programming skills and there is a feature that isn't currently available that you absolutely cannot live without, you have the capability to create your own custom commands for Embroidermodder 2. We provide an QtScript API which exposes various application functionality so that it is possible to extend the application without requiring a new release. If you have created a command that you think is worth including in the next release, just <a href="contact.html">contact us</a> and we will review it for functionality, bugs, and finally inclusion.
 
 An Embroidermodder 2 command excerpt:
 
-<a href="images/features-scripting-1.png"><img class="img" src="images/features-scripting-1.png"></a>
+\includegraphics[width=0.9\textwidth]{images/features-scripting-1.png}
 
-# Contributing
+\section{Contributing}
 
-## Version Control 
+\subsection{Version Control}
 
 Being an open source project, developers can grab the latest code at any time
 and attempt to build it themselves. We try our best to ensure that it will build smoothly
@@ -1835,106 +1851,113 @@ notify us of the problem, as we may not be aware of it and we can build fine.
 
 Try to group commits based on what they are related to: features/bugs/comments/graphics/commands/etc...
 
-See the coding style [here](libembroidery_style.md) # Embroidermodder 1.90.0 Manual
+See the coding style [here](libembroidery\_style.md)
 
-## Table of Contents
+\chapter{Embroidermodder 1.90.0 Manual}
 
-  1. [Introduction](#introduction)
-  2. [Basic Features](#basic-features)
-  3. [Advanced Features](#advanced-features)
-  4. [Other Projects](#other-projects)
-  5. [References](#References)
+\section{Table of Contents}
 
-## Introduction
+  1. [Introduction](introduction)
+  2. [Basic Features](basic-features)
+  3. [Advanced Features](advanced-features)
+  4. [Other Projects](other-projects)
+  5. [References](References)
 
-## Basic Features
+\section{Introduction}
 
-### Move a single stitch in an existing pattern
+\section{Basic Features}
 
-  1. In the `File` menu, click `Open...`. When the open dialog appears find
+\subsection{Move a single stitch in an existing pattern}
+
+\begin{enumerate}
+\item In the `File' menu, click `Open...'. When the open dialog appears find
   and select your file by double clicking the name of the file. Alternatively,
   left click the file once then click the `Open` button.
-  2. 
-  3. In the `File` menu
+\item
+\item In the `File' menu
+\end{enumerate}
 
 TIP: For users who prefer
 
-### Convert one pattern to another format
+\subsection{Convert one pattern to another format}
 
-  1. In the `File` menu, click `Open...`.
-  2. The 
-  3. In the dropdown menu within the save dialog select the 
+\begin{enumerate}
+\item In the `File` menu, click `Open...`.
+\item The 
+\item In the dropdown menu within the save dialog select the 
+\end{enumerate}
 
-## Advanced Features
+\section{Advanced Features}
 
-## Other Projects
-
-
-## References
+\section{Other Projects}
 
 
-## Planning
+\section{References}
+
+
+\subsection{Planning}
 
 To see what's planned open the [Projects](https://github.com/Embroidermodder/Embroidermodder/projects/1) tab which sorts all of the GitHub Issues into columns.
 
-## Format Support
+\subsection{Format Support}
 
-|FORMAT | READ  | WRITE | NOTES |
-|-------|--------|---------|--------|
-10o    | YES   |       | read (need to fix external color loading) (maybe find out what ctrl| code flags of 0x10, 0x08, 0x04, and 0x02 mean)
-100    |       |       | none (4 byte codes) 61 00 10 09 (type, type2, x, y ?) x & y (signed char)
-art    |       |       | none
-bro    | YES   |       | read (complete)(maybe figure out detail of header)
-cnd    |       |       | none
-col    |       |       | (color file no design) read(final) write(final)
-csd    | YES   |       | read (complete)
-dat    |       |       | read ()
-dem    |       |       | none (looks like just encrypted cnd)
-dsb    | YES   |       | read (unknown how well) (stitch data looks same as 10o)
-dst    | YES   |       | read (complete) / write(unknown)
-dsz    | YES   |       | read (unknown)
-dxf    |       |       | read (Port to C. needs refactored)
-edr    |       |       | read (C version is broken) / write (complete)
-emd    |       |       | read (unknown)
-exp    | YES   |       | read (unknown) / write(unknown)
-exy    | YES   |       | read (need to fix external color loading)
-fxy    | YES   |       | read (need to fix external color loading)
-gnc    |       |       | none
-gt     |       |       | read (need to fix external color loading)
-hus    | YES   |       | read (unknown) / write (C version is broken)
-inb    | YES   |       | read (buggy?)
-jef    | YES   |       | write (need to fix the offsets when it is moving to another spot)
-ksm    | YES   |       | read (unknown) / write (unknown)
-pcd    |       |       | 
-pcm    |       |       | 
-pcq    |       |       | read (Port to C)
-pcs    | BUGGY |       | read (buggy / colors are not correct / after reading, writing any other format is messed up)
-pec    |       |       | read / write (without embedded images, sometimes overlooks some stitches leaving a gap)
-pel    |       |       | none
-pem    |       |       | none
-pes    | YES   |       | 
-phb    |       |       | 
-phc    |       |       | 
-rgb    |       |       | 
-sew    | YES   |       | 
-shv    |       |       | read (C version is broken)
-sst    |       |       | none
-svg    |       | YES   | 
-tap    | YES   |       | read (unknown)
-u01    |       |       | 
-vip    | YES   |       | 
-vp3    | YES   |       | 
-xxx    | YES   |       | 
-zsk    |       |       | read (complete)
-
+\begin{tabular}{l l l l}
+FORMAT & READ & WRITE & NOTES \\
+\hline
+10o    & YES   &       & read (need to fix external color loading) (maybe find out what ctrl\& code flags of 0x10, 0x08, 0x04, and 0x02 mean) \\
+100    &       &       & none (4 byte codes) 61 00 10 09 (type, type2, x, y ?) x | y (signed char) \\
+art    &       &       & none \\
+bro    & YES   &       & read (complete)(maybe figure out detail of header) \\
+cnd    &       &       & none \\
+col    &       &       & (color file no design) read(final) write(final) \\
+csd    & YES   &       & read (complete) \\
+dat    &       &       & read () \\
+dem    &       &       & none (looks like just encrypted cnd) \\
+dsb    & YES   &       & read (unknown how well) (stitch data looks same as 10o) \\
+dst    & YES   &       & read (complete) / write(unknown) \\
+dsz    & YES   &       & read (unknown) \\
+dxf    &       &       & read (Port to C. needs refactored) \\
+edr    &       &       & read (C version is broken) / write (complete) \\
+emd    &       &       & read (unknown) \\
+exp    & YES   &       & read (unknown) / write(unknown) \\
+exy    & YES   &       & read (need to fix external color loading) \\
+fxy    & YES   &       & read (need to fix external color loading) \\
+gnc    &       &       & none \\
+gt     &       &       & read (need to fix external color loading) \\
+hus    & YES   &       & read (unknown) / write (C version is broken) \\
+inb    & YES   &       & read (buggy?) \\
+jef    & YES   &       & write (need to fix the offsets when it is moving to another spot) \\
+ksm    & YES   &       & read (unknown) / write (unknown) \\
+pcd    &       &       &  \\
+pcm    &       &       & \\
+pcq    &       &       & read (Port to C)\\
+pcs    & BUGGY &       & read (buggy / colors are not correct / after reading, writing any other format is messed up)\\
+pec    &       &       & read / write (without embedded images, sometimes overlooks some stitches leaving a gap)\\
+pel    &       &       & none\\
+pem    &       &       & none\\
+pes    & YES   &       & \\
+phb    &       &       & \\
+phc    &       &       & \\
+rgb    &       &       & \\
+sew    & YES   &       & \\
+shv    &       &       & read (C version is broken)\\
+sst    &       &       & none\\
+svg    &       & YES   & \\
+tap    & YES   &       & read (unknown)\\
+u01    &       &       & \\
+vip    & YES   &       & \\
+vp3    & YES   &       & \\
+xxx    & YES   &       & \\
+zsk    &       &       & read (complete)
+\end{tabular}
 
 Support for Singer FHE, CHE (Compucon) formats?
 
-# Embroidermodder Project Coding Standards
+\section{Embroidermodder Project Coding Standards}
 
 A basic set of guidelines to use when submitting code.
 
-##  Naming Conventions
+\subsection{Naming Conventions}
 
 Name variables and functions intelligently to minimize the need for comments.
 It should be immediately obvious what information it represents.
@@ -1943,28 +1966,32 @@ Short names such as i and j are fine when doing loops.
 
 Variable names should be "camelCase", starting with a lowercase word followed by uppercase word(s).
 C++ Class Names should be "CamelCase", using all uppercase word(s).
-C Functions that attempt to simulate namespacing, should be "nameSpace_camelCase".
+C Functions that attempt to simulate namespacing, should be "nameSpace\_camelCase".
 
 All files and directories shall be lowercase and contain no spaces.
 
-## Code Style
+\section{Code Style}
 
 Tabs should not be used when indenting. Setup your IDE or text editor to use 4 spaces.
 
-### Braces
+\subsection{Braces}
 
 For functions: please put each brace on a new line.
 
+\begin{verbatim}
     void function_definition(int argument)
     {
     
     }
+  \end{verbatim}
 
 For control statements: please put the first brace on the same line.
 
+\begin{verbatim}
     if (condition) {
     
     }
+\end{verbatim}
 
 Use exceptions sparingly.
 
@@ -1972,7 +1999,7 @@ Do not use ternary operator (?:) in place of if/else.
 
 Do not repeat a variable name that already occurs in an outer scope.
 
-## Version Control 
+\subsection{Version Control}
 
 Being an open source project, developers can grab the latest code at any time
 and attempt to build it themselves. We try our best to ensure that it will build smoothly
@@ -1982,7 +2009,7 @@ notify us of the problem, as we may not be aware of it and we can build fine.
 
 Try to group commits based on what they are related to: features/bugs/comments/graphics/commands/etc...
 
-## Comments
+\subsection{Comments}
 
 When writing code, sometimes there are items that we know can be improved,
 incomplete or need special clarification. In these cases, use the types of
@@ -2003,10 +2030,10 @@ gcc. In any C code, you must use:
     /* WARNING: Think twice (or more times) before changing this code. I put this here for a good reason. */
     /* NOTE: This comment is much more important than lesser comments. */
 
-## Bibilography
+    \subsection{Bibilography}
 
 
-## Donations
+    \subsection{Donations}
 
 Creating software that interfaces with hardware is costly. A summary of some of the costs involved:
                     
@@ -2018,10 +2045,6 @@ Creating software that interfaces with hardware is costly. A summary of some of 
 
 If you have found our software useful, please consider funding further development by donating to the project [on Open Collective](https://opencollective.com/embroidermodder).
 
-
-
-%\include{fdl.texi}
-
 \chapter{Conclusions}
 
 \bibliographystyle{plainnat}
@@ -2029,7 +2052,7 @@ If you have found our software useful, please consider funding further developme
 
 \appendix
 
-\section{GNU Free Documentation License}
+\include{fdl-1.3.tex}
 
 \chapter{Color Charts}
 
