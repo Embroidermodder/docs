@@ -5,6 +5,8 @@
 \usepackage{natbib}
 \usepackage[margin=1in]{geometry}
 \usepackage{graphicx}
+\usepackage{listings}
+\usepackage{longtable}
 
 \usepackage[english]{babel} %language selection
 \selectlanguage{english}
@@ -32,13 +34,27 @@
 
 \maketitle
 
-\vspace{5in}
+\begin{center}
+\vspace{3in}
 
-{\small
 \url{https://embroidermodder.org}
 
-Copyright (c) 2013-2022 The EmbroiderModder Team
-}
+\vspace{0.5in}
+
+Copyright \copyright{} 2013-2022 The Embroidermodder Team.
+
+\vspace{0.5in}
+
+Permission is granted to copy, distribute and/or modify this document
+    under the terms of the GNU Free Documentation License, Version 1.3
+    or any later version published by the Free Software Foundation;
+    with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+
+\vspace{0.5in}
+
+A copy of the license is included in the section entitled ``GNU
+    Free Documentation License''.
+\end{center}
 
 \pagebreak
 
@@ -76,6 +92,320 @@ Their name is in bold, github login in monospace, roles in normal font and any q
 
 \chapter{The Graphical User Interface: Embroidermodder \emversion}
 
+\section{Abstract}
+
+\section{Overview}
+
+\section{Features}
+
+Embroidermodder 2 has many advanced features that enable you to create awesome designs quicker, tweak existing designs to perfection, and can be fully customized to fit your workflow.
+
+A summary of these features:
+
+\begin{itemize}
+\item Cross Platform
+\item Realistic rendering
+\item Various grid types and auto-adjusting rulers
+\item Many measurement tools
+\item Add text to any design
+\item Supports many formats
+\item Batch Conversion
+\item Scripting API
+\end{itemize}
+
+\subsection{Cross Platform}
+
+If you use multiple operating systems, it's important to choose software that works on all of them.
+
+Embroidermodder 2 runs on Windows, Linux and Mac OS X. Let's not forget the Raspberry Pi (\url{http://www.raspberrypi.org}).
+
+\begin{center}
+\includegraphics[width=0.9\textwidth]{images/features-platforms-1.png}
+\end{center}
+
+\subsection{Realistic Rendering}
+% <a name="anchorRealRender"></a>
+
+It is important to be able to visualize what a design will look like when stitched and our pseudo ``3D'' realistic rendering helps achieve this.
+
+Realistic rendering sample \#1:
+
+\includegraphics[width=0.9\textwidth]{images/features-realrender-1.png}
+
+Realistic rendering sample \#2:
+
+\includegraphics[width=0.9\textwidth]{images/features-realrender-2.png}
+
+Realistic rendering sample \#3:
+
+\includegraphics[width=0.9\textwidth]{images/features-realrender-3.png}
+
+%<a name=``anchorGridRuler``></a>
+Various grid types and auto-adjusting rulers
+
+Making use of the automatically adjusting ruler in conjunction with the grid will ensure your design is properly sized and fits within your embroidery hoop area.
+
+Use rectangular, circular or isometric grids to construct your masterpiece!
+
+Multiple grids and rulers in action:
+
+\includegraphics[width=0.9\textwidth]{images/features-grid-ruler-1.png}
+
+\subsection{Many measurement tools}
+%<a name="anchorMultiMeasure"></a>
+
+Taking measurements is a critical part of creating great designs. Whether you are designing mission critical embroidered space suits for NASA or some other far out design for your next meet-up, you will have precise measurement tools at your command to make it happen. You can locate individual points or find distances between any 2 points anywhere in the design!
+
+Take quick and accurate measurements:
+
+\includegraphics[width=0.9\textwidth]{images/features-measure-1.png}
+
+\subsection{Add text to any design}
+%<a name=``anchorText``></a>
+
+Need to make company apparel for all of your employees with individual names on them? No sweat. Just simply add text to your existing design or create one from scratch, quickly and easily.
+Didn't get it the right size or made a typo? No problem. Just select the text and update it with the property editor.
+
+Add text and adjust its properties quickly:
+
+\includegraphics[width=0.9\textwidth]{images/features-text-1.png}
+
+\subsection{Supports many formats}
+%<a name="anchorFormats"></a>
+
+Embroidery machines all accept different formats. There are so many formats available that it can sometimes be confusing whether a design will work with your machine.
+
+Embroidermodder 2 supports a wide variety of embroidery formats as well as several vector formats, such as SVG and DXF. This allows you to worry less about which designs you can use.
+
+\subsection{Batch Conversion}
+%<a name=``anchorBatch``></a>
+
+Need to send a client several different formats? Just use libembroidery-convert, our command line utility which supports batch file conversion.
+
+There are a multitude of formats to choose from:
+
+\includegraphics[width=0.9\textwidth]{images/features-formats-1.png}
+
+\subsection{Scripting API}
+%<a name=``anchorScriptingAPI``></a>
+
+If you've got programming skills and there is a feature that isn't currently available that you absolutely cannot live without, you have the capability to create your own custom commands for Embroidermodder 2. We provide an QtScript API which exposes various application functionality so that it is possible to extend the application without requiring a new release. If you have created a command that you think is worth including in the next release, just <a href=``contact.html``>contact us</a> and we will review it for functionality, bugs, and finally inclusion.
+
+An Embroidermodder 2 command excerpt:
+
+\includegraphics[width=0.9\textwidth]{images/features-scripting-1.png}
+
+\section{Contributing}
+
+\subsection{Version Control}
+
+Being an open source project, developers can grab the latest code at any time
+and attempt to build it themselves. We try our best to ensure that it will build smoothly
+at any time, although occasionally we do break the build. In these instances,
+please provide a patch, pull request which fixes the issue or open an issue and
+notify us of the problem, as we may not be aware of it and we can build fine.
+
+Try to group commits based on what they are related to: features/bugs/comments/graphics/commands/etc...
+
+See the coding style [here](libembroidery\_style.md)
+
+\section{Table of Contents}
+
+  1. [Introduction](introduction)
+  2. [Basic Features](basic-features)
+  3. [Advanced Features](advanced-features)
+  4. [Other Projects](other-projects)
+  5. [References](References)
+
+\section{Introduction}
+
+\section{Basic Features}
+
+\subsection{Move a single stitch in an existing pattern}
+
+\begin{enumerate}
+\item In the `File' menu, click `Open...'. When the open dialog appears find
+  and select your file by double clicking the name of the file. Alternatively,
+  left click the file once then click the `Open` button.
+\item
+\item In the `File' menu
+\end{enumerate}
+
+TIP: For users who prefer
+
+\subsection{Convert one pattern to another format}
+
+\begin{enumerate}
+\item In the `File` menu, click `Open...`.
+\item The 
+\item In the dropdown menu within the save dialog select the 
+\end{enumerate}
+
+\section{Advanced Features}
+
+\section{Other Projects}
+
+
+\subsection{Planning}
+
+To see what's planned open the [Projects](https://github.com/Embroidermodder/Embroidermodder/projects/1) tab which sorts all of the GitHub Issues into columns.
+
+\subsection{Format Support}
+
+\begin{longtable}{l l l p{8cm}}
+FORMAT & READ & WRITE & NOTES \\
+\hline
+10o    & YES   &       & read (need to fix external color loading) (maybe find out what ctrl\& code flags of 0x10, 0x08, 0x04, and 0x02 mean) \\
+100    &       &       & none (4 byte codes) 61 00 10 09 (type, type2, x, y ?) x | y (signed char) \\
+art    &       &       & none \\
+bro    & YES   &       & read (complete)(maybe figure out detail of header) \\
+cnd    &       &       & none \\
+col    &       &       & (color file no design) read(final) write(final) \\
+csd    & YES   &       & read (complete) \\
+dat    &       &       & read () \\
+dem    &       &       & none (looks like just encrypted cnd) \\
+dsb    & YES   &       & read (unknown how well) (stitch data looks same as 10o) \\
+dst    & YES   &       & read (complete) / write(unknown) \\
+dsz    & YES   &       & read (unknown) \\
+dxf    &       &       & read (Port to C. needs refactored) \\
+edr    &       &       & read (C version is broken) / write (complete) \\
+emd    &       &       & read (unknown) \\
+exp    & YES   &       & read (unknown) / write(unknown) \\
+exy    & YES   &       & read (need to fix external color loading) \\
+fxy    & YES   &       & read (need to fix external color loading) \\
+gnc    &       &       & none \\
+gt     &       &       & read (need to fix external color loading) \\
+hus    & YES   &       & read (unknown) / write (C version is broken) \\
+inb    & YES   &       & read (buggy?) \\
+jef    & YES   &       & write (need to fix the offsets when it is moving to another spot) \\
+ksm    & YES   &       & read (unknown) / write (unknown) \\
+pcd    &       &       &  \\
+pcm    &       &       & \\
+pcq    &       &       & read (Port to C)\\
+pcs    & BUGGY &       & read (buggy / colors are not correct / after reading, writing any other format is messed up)\\
+pec    &       &       & read / write (without embedded images, sometimes overlooks some stitches leaving a gap)\\
+pel    &       &       & none\\
+pem    &       &       & none\\
+pes    & YES   &       & \\
+phb    &       &       & \\
+phc    &       &       & \\
+rgb    &       &       & \\
+sew    & YES   &       & \\
+shv    &       &       & read (C version is broken)\\
+sst    &       &       & none\\
+svg    &       & YES   & \\
+tap    & YES   &       & read (unknown)\\
+u01    &       &       & \\
+vip    & YES   &       & \\
+vp3    & YES   &       & \\
+xxx    & YES   &       & \\
+zsk    &       &       & read (complete)
+\end{longtable}
+
+Support for Singer FHE, CHE (Compucon) formats?
+
+\section{Embroidermodder Project Coding Standards}
+
+A basic set of guidelines to use when submitting code.
+
+\subsection{Naming Conventions}
+
+Name variables and functions intelligently to minimize the need for comments.
+It should be immediately obvious what information it represents.
+Short names such as x and y are fine when referring to coordinates.
+Short names such as i and j are fine when doing loops.
+
+Variable names should be ``camelCase'', starting with a lowercase word followed by uppercase word(s).
+C++ Class Names should be ``CamelCase'', using all uppercase word(s).
+C Functions that attempt to simulate namespacing, should be ``nameSpace\_camelCase''.
+
+All files and directories shall be lowercase and contain no spaces.
+
+\section{Code Style}
+
+Tabs should not be used when indenting. Setup your IDE or text editor to use 4 spaces.
+
+\subsection{Braces}
+
+For functions: please put each brace on a new line.
+
+\begin{lstlisting}
+void function_definition(int argument)
+{
+    /* code block */
+}
+\end{lstlisting}
+
+For control statements: please put the first brace on the same line.
+
+\begin{lstlisting}
+if (condition) {
+    /* code block */    
+}
+\end{lstlisting}
+
+Use exceptions sparingly.
+
+Do not use ternary operator (?:) in place of if/else.
+
+Do not repeat a variable name that already occurs in an outer scope.
+
+\subsection{Version Control}
+
+Being an open source project, developers can grab the latest code at any time
+and attempt to build it themselves. We try our best to ensure that it will build smoothly
+at any time, although occasionally we do break the build. In these instances,
+please provide a patch, pull request which fixes the issue or open an issue and
+notify us of the problem, as we may not be aware of it and we can build fine.
+
+Try to group commits based on what they are related to: features/bugs/comments/graphics/commands/etc...
+
+\subsection{Comments}
+
+When writing code, sometimes there are items that we know can be improved,
+incomplete or need special clarification. In these cases, use the types of
+comments shown below. They are pretty standard and are highlighted by many editors to
+make reviewing code easier. We also use shell scripts to parse the code to find
+all of these occurrences so someone wanting to go on a bug hunt will be able to
+easily see which areas of the code need more love. Use the same convention
+as libembroidery.
+
+libembroidery is written in C and adheres to C89 standards. This means
+that any C99 or C++ comments will show up as errors when compiling with
+gcc. In any C code, you must use:
+
+\begin{verbatim}
+    /* C Style Comments */
+
+    /* TODO: This code clearly needs more work or further review. */
+
+    /* BUG: This code is definitely wrong. It needs fixed. */
+
+    /* HACK: This code shouldn't be written this way or I don't feel
+     * right about it. There may a better solution */
+
+    /* WARNING: Think twice (or more times) before changing this code.
+     * I put this here for a good reason. */
+
+    /* NOTE: This comment is much more important than lesser comments. */
+\end{verbatim}
+
+\subsection{Donations}
+
+Creating software that interfaces with hardware is costly. A summary of some of the costs involved:
+     
+\begin{itemize}               
+\item Developer time for 2 core developers
+\item Computer equipment and parts
+\item Embroidery machinery
+\item Various electronics
+\item Consumable materials (thread, fabric, stabilizer, etc...)
+\end{itemize}
+
+If you have found our software useful, please consider funding further development by donating to the project [on Open Collective](https://opencollective.com/embroidermodder).
+
+\section{Introduction}
+
 (UNDER MAJOR RESTRUCTURING, PLEASE WAIT FOR VERSION 2)
 
 \begin{verbatim}
@@ -99,28 +429,15 @@ The newest version, Embroidermodder 2 can:
 \item run on Windows, Mac and Linux
 \end{itemize}
 
-For more information, see [our website](http://embroidermodder.org).
+For more information, see our website \cite{thewebsite}.
 
-Embroidermodder 2 is very much a work in progress since we're doing a ground
-up rewrite to an interface in Python using the GUI toolkit Tk.
-The reasoning for this is detailed in the issues tab.
+Embroidermodder 2 is very much a work in progress since we're doing a ground up rewrite to an interface in Python using the GUI toolkit Tk. The reasoning for this is detailed in the issues tab.
 
-For a more in-depth look at what we are developing read
-the developer notes\footnote{link to dev notes section}.
-This discusses recent changes in a less formal way than a
-changelog (since this software is in
-development) and covers what we are about to try.
+For a more in-depth look at what we are developing read the developer notes\footnote{link to dev notes section}. This discusses recent changes in a less formal way than a changelog (since this software is in development) and covers what we are about to try.
 
 To see what we're focussing on at the moment check this table.
 
-\begin{tabular}{l l}
-\textbf{Date} & \textbf{Event} \\
-\hline
-April-June 2022 & Finish the conversion to C/SDL2 \\
-July-August 2022 & Finish all the targets in the Design, or assign them to 2.1. \\
-September 2022 & Bugfixing, Testing, QA. libembroidery 1.0 will be released, then updates will slow down and the Embroidermodder 2 development version will be fixed to the API of this version. \\
-October 2022 & Embroidermodder 2 is officially released.
-\end{tabular}
+\input{table_roadmap.tex}
 
 \section{Build and Install}
 
@@ -161,12 +478,6 @@ will build the software. Currently this is the 2.0-alpha, which will have a buil
 some kind.
 
 \section{Dependencies and Build}
-
-\chapter{The Low Level API: Libembroidery \libembversion}
-
-\chapter{The Command Line Interface: \texttt{embroider}}
-
-\section{Usage}
 
 \chapter{Plans}
 
@@ -637,7 +948,12 @@ interact? TODO: Screenshot a working draft to demonstrate.
     apt install google-android-ndk-installer cmake lldb gradle
 \end{verbatim}
 
-\chapter{Libembroidery v1.0-alpha Manual}
+\chapter{The Command Line Interface: \texttt{embroider}}
+
+\section{Usage}
+
+
+\chapter{The Low Level API: Libembroidery \libembversion}
 
 (Under construction, please wait for v1.0 release.)
 
@@ -657,9 +973,6 @@ the Embroidermodder 2 GUI.
 
 If you want to find a simple fix to contribute see the *Development* section
 of the manual.
-
-
-\subsection{Table of Contents}
 
 \subsubsection{ License}
 
@@ -890,19 +1203,14 @@ this for them:
     $ embroider --braille ``Hello, world!`` hello.dst
 \end{verbatim}
 
-which would produce braille that would read ``Hello, world!`` as an embroidery
-design.
+which would produce braille that would read ``Hello, world!`` as an embroidery design.
 
 Another option is tactile fills that use the same fill algorithms but are
 designed better to facilitate tactile art.
 
-I think the way forward on this is to call up the RNIB business advice line and
-ask for assistance once we have a working model. That way they can get us in
-contact with experts to review how legible the output is and usable the
-software is for the intended audience.
+I think the way forward on this is to call up the RNIB business advice line and ask for assistance once we have a working model. That way they can get us in contact with experts to review how legible the output is and usable the software is for the intended audience.
 
-This is less important than getting better machine support but given the high
-social impact I think it should be a priority.
+This is less important than getting better machine support but given the high social impact I think it should be a priority.
 
 \subsection{Development}
 
@@ -934,13 +1242,11 @@ an issue.
 
 \subsubsection{Standard}
 
-The criteria for a good Pull Request from an outside developer is,
-from most to least important:
+The criteria for a good Pull Request from an outside developer has these properties, from most to least important:
 
 \begin{enumerate}
 \item No regressions on testing.
-\item Add a feature, bug fix or documentation that is already agreed on
-   through GitHub issues or some other way with a core developer.
+\item Add a feature, bug fix or documentation that is already agreed on through GitHub issues or some other way with a core developer.
 \item No GUI specific code should be in libembroidery, that's for Embroidermodder.
 \item Pedantic/ansi C unless there's a good reason to use another language.
 \item Meet the style above (i.e. [PEP 7, Code Lay-out](\url{https://peps.python.org/pep-0007/#code-lay-out})).
@@ -962,8 +1268,7 @@ down is positive, right is positive, including the OpenGL standard so when
 switching between graphics formats and stitch formats we need to use a vertical
 flip (`embPattern\_flip`).
 
-`0x20` is the space symbol, so when padding either 0 or space is preferred and
-in the case of space use the literal ' '.
+`0x20` is the space symbol, so when padding either 0 or space is preferred and in the case of space use the literal ' '.
 
 \subsubsection{To Do}
 
@@ -971,59 +1276,52 @@ We currently need help with:
 
 \begin{enumerate}
 \item Thorough descriptions of each embroidery format.
-\item Finding resources for each of the branded thread libraries
-   (along with a full citation for documentation).
-\item Finding resources for each geometric algorithm used (along with a
-   full citation for documentation).
-\item Completing the full `--full-test-suite`  with no segfaults and at least
-   a clear error message (for example ``not implemented yet``).
-\item Identifying ``best guesses`` for filling in missing information when going
-   from, say `.csv` to a late `.pes` version. What should the default be when
-   the data doesn't clarify?
+\item Finding resources for each of the branded thread libraries (along with a full citation for documentation).
+\item Finding resources for each geometric algorithm used (along with a full citation for documentation).
+\item Completing the full `--full-test-suite`  with no segfaults and at least a clear error message (for example ``not implemented yet``).
+\item Identifying ``best guesses`` for filling in missing information when going from, say `.csv` to a late `.pes` version. What should the default be when the data doesn't clarify?
 \item Improving the written documentation.
-\item Funding, see the Sponsor button above. We can treat this as ``work`` and put
-   far more hours in with broad support in small donations from people who
-   want specific features.
+\item Funding, see the Sponsor button above. We can treat this as ``work`` and put far more hours in with broad support in small donations from people who want specific features.
 \end{enumerate}
 
 Beyond this the development targets are categories sorted into:
 
 \begin{enumerate}
 \item [Basic Features](\#basic-features)
-2. [Code quality and user friendliness](\#code-quality-and-user-friendliness)
-3. [embroider CLI](\#embroider-cli)
-4. [Documentation](\#documentation)
-5. [GUI](\#gui)
-6. [electronics development](\#electronics-development)
+\item [Code quality and user friendliness](\#code-quality-and-user-friendliness)
+\item [embroider CLI](\#embroider-cli)
+\item [Documentation](\#documentation)
+\item [GUI](\#gui)
+\item [electronics development](\#electronics-development)
 \end{enumerate}
 
-\subsubsection 1.6.4.1. Basic features.
+\subsubsection{Basic features}
 
-1. Incorporate \texttt{\#if 0}ed parts of \texttt{libembroidery.c}.
-2. Interpret how to write formats that have a read mode from the source
-   code and vice versa.
-3. Document the specifics of the file formats here for embroidery machine
-   specific formats. Find websites and other sources that break down the
-   binary formats we currently don't understand.
-4. Find more and better documentation of the structure of the headers for
-   the formats we do understand.
+\begin{enumerate}
+\item Incorporate \texttt{\#if 0}ed parts of \texttt{libembroidery.c}.
+\item Interpret how to write formats that have a read mode from the source code and vice versa.
+\item Document the specifics of the file formats here for embroidery machine specific formats. Find websites and other sources that break down the binary formats we currently don't understand.
+\item Find more and better documentation of the structure of the headers for the formats we do understand.
+\end{enumerate}
 
-\subsubsection 1.6.4.2. Code quality and user friendliness
+\subsubsection{Code quality and user friendliness}
 
-1. Document all structs, macros and functions (will contribute directly
+\begin{enumerate}
+\item Document all structs, macros and functions (will contribute directly
    on the web version).
-2. Incorporate experimental code, improve support for language bindings.
-3. Make stitch x, y into an EmbVector.
+\item Incorporate experimental code, improve support for language bindings.
+\item Make stitch x, y into an EmbVector.
+\end{enumerate}
 
-\subsubsection 1.6.4.3. embroider CLI
+\subsubsection{embroider CLI}
 
-1. Make -circle flag to add a circle to the current pattern.
-2. Make -rect flag to add a rectangle to the current pattern.
-3. Make -fill flag to set the current satin fill algorithm for the current
-   geometry. (for example ``-fill crosses -circle 11,13,10'' fills a circle
-   with center 11mm, 13mm with radius 10mm with crosses).
-4. Make -ellipse flag to add to ellipse to the current pattern.
-5. Make -bezier flag to add a bezier curve to the current pattern.
+\begin{enumerate}
+\item Make -circle flag to add a circle to the current pattern.
+\item Make -rect flag to add a rectangle to the current pattern.
+\item Make -fill flag to set the current satin fill algorithm for the current geometry. (for example ``-fill crosses -circle 11,13,10'' fills a circle with center 11mm, 13mm with radius 10mm with crosses).
+\item Make -ellipse flag to add to ellipse to the current pattern.
+\item Make -bezier flag to add a bezier curve to the current pattern.
+\end{enumerate}
 
 \subsubsection{Embroider pipeline}
 
@@ -1121,80 +1419,15 @@ below based on what level we think is available.
 
 \subsubsection{Table of Format Support Levels}
 
-| *Format* | *Read Support* | *Write Support* | *Specialised Tests* | *Documentation* | *Score* |
-|---|---|---|---|---|---|
-| [Toyota Embroidery Format (.100)](link to toyota-embroidery-format-100) | Basic | Basic | None | None | 2/11 |
-| [Toyota Embroidery Format (.10o)](link to toyota-embroidery-format-10o) | Basic | Basic | None | None | 2/11 |
-| [Bernina Embroidery Format (.art)](link to bernina-embroidery-format-art) | None | None | None | None | 0/11 |
-| [Bitmap Cache Embroidery Format (.bmc)](link to bitmap-cache-embroidery-format-bmc) | Basic | None | None | None | 1/11 |
-| [Bits and Volts Embroidery Format (.bro)](link to bits-and-volts-embroidery-format-bro) | None | None | None | None | 0/11 |
-| [Melco Embroidery Format (.cnd)](link to melco-embroidery-format-cnd) | None | None | None | None | 0/11 |
-| [Embroidery Thread Color Format (.col)](link to embroidery-thread-color-format-col) | Basic | Basic | None | Basic | 0/11 |
-| [Singer Embroidery Format (.csd)](link to singer-embroidery-format-csd) | None | None | None | None | 0/11 |
-| [Comma Separated Values (.csv)](link to comma-seperated-values-csv) | None | None | None | None | 0/11 |
-| [Barudan Embroidery Format (.dat)](link to barudan-embroidery-format-dat) | None | None | None | None | 0/11 |
-| [Melco Embroidery Format (.dem)](link to melco-embroidery-format-dem) | None | None | None | None | 0/11 |
-| [Barudan Embroidery Format (.dsb)](link to barudan-embroidery-format-dsb) | None | None | None | None | 0/11 |
-| [Tajima Embroidery Format (.dst)](link to tajima-embroidery-format-dst) | None | None | None | None | 0/11 |
-| [ZSK USA Embroidery Format (.dsz)](link to zsk-usa-embroidery-format-dsz) | None | None | None | None | 0/11 |
-| [Drawing Exchange Format (.dxf)](link to drawing-exchange-format-dxf) | None | None | None | None | 0/11 |
-| [Embird Embroidery Format (.edr)](link to embird-embroidery-format-edr) | None | None | None | None | 0/11 |
-| [Elna Embroidery Format (.emd)](link to elna-embroidery-format-emd) | None | None | None | None | 0/11 |
-| [Melco Embroidery Format (.exp)](link to melco-embroidery-format-exp) | None | None | None | None | 0/11 |
-| [Eltac Embroidery Format (.exy)](link to eltac-embroidery-format-exy) | None | None | None | None | 0/11 |
-| [Sierra Expanded Embroidery Format (.eys)](link to sierra-expanded-embroidery-format-eys) | None | None | None | None | 0/11 |
-| [Fortron Embroidery Format (.fxy)](link to fortran-embroidery-format-fxy) | None | None | None | None | 0/11 |
-| [Smoothie G-Code Embroidery Format (.gc)](link to smoothie-g-code-embroidery-format-gc) | None | None | None | None | 0/11 |
-| [Great Notions Embroidery Format (.gnc)](link to great-notions-embroidery-format-gnc) | None | None | None | None | 0/11 |
-| [Gold Thread Embroidery Format (.gt)](link to gold-thread-embroidery-format-gt) | None | None | None | None | 0/11 |
-| [Husqvarna Viking Embroidery Format (.hus)](link to husqvarna-viking-embroidery-format-hus) | None | None | None | None | 0/11 |
-| [Inbro Embroidery Format (.inb)](link to inbro-embroidery-format-inb) | None | None | None | None | 0/11 |
-| [Embroidery Color Format (.inf)](link to embroidery-color-format-inf) | None | None | None | None | 0/11 |
-| [Janome Embroidery Format (.jef)](link to janome-embroidery-format-jef) | None | None | None | None | 0/11 |
-| [Pfaff Embroidery Format (.ksm)](link to pfaff-embroidery-format-ksm) | None | None | None | None | 0/11 |
-| [Pfaff Embroidery Format (.max)](link to pfaff-embroidery-format-max) | None | None | None | None | 0/11 |
-| [Mitsubishi Embroidery Format (.mit)](link to mitsubishi-embroidery-format-mit) | None | None | None | None | 0/11 |
-| [Ameco Embroidery Format (.new)](link to ameco-embroidery-format-new) | None | None | None | None | 0/11 |
-| [Melco Embroidery Format (.ofm)](link to melco-embroidery-format-ofm) | None | None | None | None | 0/11 |
-| [Pfaff Embroidery Format (.pcd)](link to pfaff-embroidery-format-pcd) |  None | None | None | None | 0/11 |
-| [Pfaff Embroidery Format (.pcm)](link to pfaff-embroidery-format-pcm) | None | None | None | None | 0/11 |
-| [Pfaff Embroidery Format (.pcq)](link to pfaff-embroidery-format-pcq) | None | None | None | None | 0/11 |
-| [Pfaff Embroidery Format (.pcs)](link to pfaff-embroidery-format-pcs) | None | None | None | None | 0/11 |
-| [Brother Embroidery Format (.pec)](link to brother-embroidery-format-pec) | None | None | None | None | 0/11 |
-| [Brother Embroidery Format (.pel)](link to brother-embroidery-format-pel) | None | None | None | None | 0/11 |
-| [Brother Embroidery Format (.pem)](link to brother-embroidery-format-pem) | None | None | None | None | 0/11 |
-| [Brother Embroidery Format (.pes)](link to brother-embroidery-format-pes) | None | None | None | None | 0/11 |
-| [Brother Embroidery Format (.phb)](link to brother-embroidery-format-phb) | None | None | None | None | 0/11 |
-| [Brother Embroidery Format (.phc)](link to brother-embroidery-format-phc) | None | None | None | None | 0/11 |
-| [AutoCAD Embroidery Format (.plt)](link to brother-embroidery-format-plt) | None | None | None | None | 0/11 |
-| [RGB Embroidery Format (.rgb)](link to rgb-embroidery-format-rgb) | None | None | None | None | 0/11 |
-| [Janome Embroidery Format (.sew)](link to janome-embroidery-format-sew) | None | None | None | None | 0/11 |
-| [Husqvarna Viking Embroidery Format (.shv)](link to husqvarna-viking-embroidery-format-shv) | None | None | None | None | 0/11 |
-| [Sunstar Embroidery Format (.sst)](link to sunstar-embroidery-format-sst) | None | None | None | None | 0/11 |
-| [Data Stitch Embroidery Format (.stx)](link to data-stitch-embroidery-format-stx) | None | None | None | None | 0/11 |
-| [Scalable Vector Graphics (.svg)](link to scalable-vector-graphics-svg) | None | None | None | None | 0/12 |
-| [Pfaff Embroidery Format (.t01)](link to pfaff-embroidery-format-t01) | None | None | None | None | 0/11 |
-| [Pfaff Embroidery Format (.t09)](link to pfaff-embroidery-format-t09) | None | None | None | None | 0/11 |
-| [Happy Embroidery Format (.tap)](link to happy-embroidery-format-tap) | None | None | None | None | 0/11 |
-| [ThredWorks Embroidery Format (.thr)](link to thredworks-embroidery-format-thr) | None | None | None | None | 0/11 |
-| [Text File (.txt)](link to text\_file\_txt) | None | None | None | None | 0/11 |
-| [Barudan Embroidery Format (.u00)](link to barudan-embroidery-format-u00) | None | None | None | None | 0/11 |
-| [Barudan Embroidery Format (.u01)](link to barudan-embroidery-format-u01) | None | None | None | None | 0/11 |
-| [Pfaff Embroidery Format (.vip)](link to pfaff-embroidery-format-vip) | None | None | None | None | 0/11 |
-| [Pfaff Embroidery Format (.vp3)](link to pfaff-embroidery-format-vp3) | None | None | None | None | 0/11 |
-| [Singer Embroidery Format (.xxx)](link to singer-embroidery-format-xxx) | None | None | None | None | 0/11 |
-| [ZSK USA Embroidery Format (.zsk)](link to zsk\_usa\_embroidery\_format\_zsk) | None | | None | None | None | 0/11 |
-| *Total* | - | - | - | - | 0/671 |
+\input{table_of_format_doc_support.tex}
 
-For a total of 0% coverage.
-
-\subsubsection 1.7.2. Toyota Embroidery Format (.100)
+\subsubsection{Toyota Embroidery Format (.100)}
 
 The Toyota 100 format is a stitch-only format that uses an external color file.
 
 The stitch encoding is in 4 byte chunks.
 
-\subsubsection 1.7.3. Toyota Embroidery Format (.10o)
+\subsubsection{Toyota Embroidery Format (.10o)}
 
 The Toyota 10o format is a stitch-only format that uses an external color file.
 
@@ -1212,11 +1445,9 @@ We don't know much about this format. TODO: Find a source.
 
 The Bits and Volts bro format is a stitch-only format that uses an external color file.
 
-The header is 256 bytes. There's a series of unknown variables in the
-header.
+The header is 256 bytes. There's a series of unknown variables in the header.
 
-The stitch list uses a variable length encoding which is 2 bytes for any
-stitch
+The stitch list uses a variable length encoding which is 2 bytes for any stitch
 
 \subsubsection{Melco Embroidery Format (.cnd)}
 
@@ -1228,12 +1459,9 @@ We don't know much about this format. TODO: Find a source.
 
 An external color file format for formats that do not record their own colors. 
 
-It is a human-readable format that has a header that is a single line containing
-only the number of threads in decimal followed by the windows line break \begin{verbatim}'\r\n'\end{verbatim}.
+It is a human-readable format that has a header that is a single line containing only the number of threads in decimal followed by the windows line break \begin{verbatim}'\r\n'\end{verbatim}.
 
-Then the rest of the file is a comma seperated value list of all threads with
-4 values per line: the index of the thread then the red, green and blue channels
-of the color in that order.
+Then the rest of the file is a comma seperated value list of all threads with 4 values per line: the index of the thread then the red, green and blue channels of the color in that order.
 
 \begin{flushleft}
 \textbf{Example}
@@ -1306,7 +1534,7 @@ Stitch Only Format
 Format comments are thanks to \url{tspilman@dalcoathletic.com} who's
 notes appeared at \url{http://www.wotsit.org} under Tajima Format.
 
-\subsubsection 1.7.14.1. Header
+\subsubsection{Header}
 
 The header seems to contain information about the design.
 Seems to be ASCII text delimited by 0x0D (carriage returns).
@@ -1317,11 +1545,12 @@ length and padded out by 0x20 to 512 bytes total.
 All entries in the header seem to be 2 ASCII characters
 followed by a colon, then it's value trailed by a carriage return.
 
-| *C memory* | *Description* |
-|------------|-------------|
-| `char LA[16+1];` | First is the 'LA' entry, which is the design name with no path or extension information. The blank is 16 characters in total, but the name must not be longer that 8 characters and padded out with spaces (0x20). |
-| `char ST[7+1];` | Next is the stitch count ST, this is a 7 digit number padded by leading zeros. This is the total stitch count including color changes, jumps, nups, and special records. |
-| `char CO[3+1];` | Next, is CO or colors, a 3 digit number padded by leading zeros. This is the number of color change records in the file. |
+\begin{longtable}{l p{10cm}}
+\textbf{C memory} & \textbf{Description} \\
+\hline
+\texttt{char LA[16+1];} & First is the 'LA' entry, which is the design name with no path or extension information. The blank is 16 characters in total, but the name must not be longer that 8 characters and padded out with spaces (0x20). \\
+\texttt{char ST[7+1];} & Next is the stitch count ST, this is a 7 digit number padded by leading zeros. This is the total stitch count including color changes, jumps, nups, and special records. \\
+\texttt{char CO[3+1];} & Next, is CO or colors, a 3 digit number padded by leading zeros. This is the number of color change records in the file. |
 | `char POSX[5+1];` | Next is +X or the positive X extent in centimeters, a 5 digit non-decimal number padded by leading zeros. |
 | `char NEGX[5+1];` | Following is the -X or the negative X extent in millimeters, a 5 digit non-decimal number padded by leading zeros. |
 | `char POSY[5+1];` | Again, the +Y extents. |
@@ -1329,6 +1558,7 @@ followed by a colon, then it's value trailed by a carriage return.
 | `char AX[6+1]; char AY[6+1];` | AX and AY should express the relative coordinates of the last point from the start point in 0.1 mm. If the start and last points are the same, the coordinates are (0,0). |
 | `char MX[6+1];` `char MY[6+1];` | MX and MY should express coordinates of the last point of the previous file for a multi-volume design. A multi-volume design means a design consisted of two or more files. This was used for huge designs that can not be stored in a single paper tape roll. It is not used so much (almost never) nowadays. |
 | `char PD[9+1];` | PD is also storing some information for multi-volume design. |
+\end{longtable}
 
 Uses 3 byte per stitch encoding with the format as follows:
 
@@ -1378,25 +1608,25 @@ Stitch Only Format.
 
 Stitch Only Format.
 
-\subsubsection 1.7.20. Eltac Embroidery Format (.exy)
+\subsubsection{Eltac Embroidery Format (.exy)}
 
 Stitch Only Format.
 
-\subsubsection 1.7.21. Sierra Expanded Embroidery Format (.eys)
+\subsubsection{Sierra Expanded Embroidery Format (.eys)}
 
 Stitch Only Format.
 
 Smoothie G-Code Embroidery Format (.fxy)?
 
-\subsubsection 1.7.22. Fortron Embroidery Format (.fxy)
+\subsubsection{Fortron Embroidery Format (.fxy)}
 
 Stitch Only Format.
 
-\subsubsection 1.7.23. Great Notions Embroidery Format (.gnc)
+\subsubsection{Great Notions Embroidery Format (.gnc)}
 
 Stitch Only Format.
 
-\subsubsection 1.7.24. Gold Thread Embroidery Format (.gt)
+\subsubsection{Gold Thread Embroidery Format (.gt)}
 
 Stitch Only Format.
 
@@ -1458,19 +1688,19 @@ The Pfaff pcq format is stitch-only.
 
 The Pfaff pcs format is stitch-only.
 
-\subsubsection 1.7.38. Brother Embroidery Format (.pec)
+\subsubsection{Brother Embroidery Format (.pec)}
 
 The Brother pec format is stitch-only.
 
-\subsubsection 1.7.39. Brother Embroidery Format (.pel)
+\subsubsection{Brother Embroidery Format (.pel)}
 
 The Brother pel format is stitch-only.
 
-\subsubsection 1.7.40. Brother Embroidery Format (.pem)
+\subsubsection{Brother Embroidery Format (.pem)}
 
 The Brother pem format is stitch-only.
 
-\subsubsection 1.7.41. Brother Embroidery Format (.pes)
+\subsubsection{Brother Embroidery Format (.pes)}
 
 The Brother pes format is stitch-only.
 
@@ -1506,7 +1736,7 @@ The Sunstar sst format is stitch-only.
 
 The Data Stitch stx format is stitch-only.
 
-\subsubsection Scalable Vector Graphics (.svg)
+\subsubsection{Scalable Vector Graphics (.svg)}
 
 The scalable vector graphics (SVG) format is a graphics format
 maintained by ...
@@ -1640,7 +1870,7 @@ process for more info:
 libembroidery relies on the Arduino SD library for reading files. See
 the ino-file source and header files for more information.
 
-\subsection 1.9. The Assembly Split
+\subsection{The Assembly Split}
 
 One problem to the problem of supporting both systems with abundant memory
 (such as a 2010s or later desktop) and with scarce memory (such as embedded
@@ -1667,18 +1897,19 @@ assuming pandoc is available.
 \end{itemize}
 
 This way:
-  1. We write one set of documents for all projects.
-  2. The website can be simple and static, supporting machines that don't run javascript.
-  3. We control the styling of each version independently of our editing (Markdown) version
-  4. The printer-friendly documentation can have nicely rendered fonts and well placed figures.
 
-\subsection 1.11. Features
+\begin{enumerate}
+\item We write one set of documents for all projects.
+\item The website can be simple and static, supporting machines that don't run javascript.
+\item We control the styling of each version independently of our editing (Markdown) version
+\item The printer-friendly documentation can have nicely rendered fonts and well placed figures.
+\end{enumerate}
 
-\subsubsection 1.11.1. Bindings
+\subsection{Features}
 
-Bindings for libembroidery are maintained for the languages we use
-internally in the project, for other languages we consider that the
-responsibility of other teams using the library.
+\subsubsection{Bindings}
+
+Bindings for libembroidery are maintained for the languages we use internally in the project, for other languages we consider that the responsibility of other teams using the library.
 
 So libembroidery is going to be supported on:
 
@@ -1700,13 +1931,7 @@ see this StackOverflow discussion [for help](\url{https://stackoverflow.com/ques
 
 For Python you can do the same using [ctypes](\url{https://www.geeksforgeeks.org/how-to-call-a-c-function-in-python/}).
 
-\subsection 1.12. Threads
-
-* [DXF Color Table](link to dxf color table)
-* [HUS Color Table](link to hus color table)
-* [JEF Color Table](link to jef color table)
-* [PCM Color Table](link to pcm color table)
-* [PEC Color Table](link to pec color table)
+\subsection{Threads}
 
 \subsubsection{DXF color table}
 
@@ -1753,352 +1978,25 @@ or fitting to images/graphics.
 \subsection{Bibliography}
 
 \begin{verbatim}
-1. <a name="1"></a> Rudolf _Technical Info_ [http://www.achatina.de/sewing/main/TECHNICL.HTM](http://www.achatina.de/sewing/main/TECHNICL.HTM)
+1. Rudolf _Technical Info_ [http://www.achatina.de/sewing/main/TECHNICL.HTM](http://www.achatina.de/sewing/main/TECHNICL.HTM)
 (Accessed 25 November 2021)
-2. <a name="2"></a> fineEmbStudio2021
-3. <a name="3"></a> Edutech format description (eduTechWikiDST)
-4. <a name="4"></a> KDE Liberty Description (libertyTajima)
-5. <a name="5"></a> The Sewing Witch _PCD2FMT_ [http://www.sewingwitch.com/sewing/bin/pcd2fmt.html](http://www.sewingwitch.com/sewing/bin/pcd2fmt.html) (Accessed November 2021)
-6. <a name="6"></a> [http://steve-jansen.github.io/guides/windows-batch-scripting/part-7-functions.html](http://steve-jansen.github.io/guides/windows-batch-scripting/part-7-functions.html)
-7. <a name="7"></a> [https://stackoverflow.com/questions/16286134/imagemagick-how-can-i-work-with-histogram-result](https://stackoverflow.com/questions/16286134/imagemagick-how-can-i-work-with-histogram-result)
-8. <a name="8"></a> Fritzing [https://github.com/fritzing/fritzing-app](https://github.com/fritzing/fritzing-app)
-9. <a name="9"></a> Sahoo, P., Wilkins, C., and Yeager, J., “Threshold selection using Renyi's entropy”, _Pattern Recognition_, vol. 30, no. 1, pp. 71–84, 1997. doi:10.1016/S0031-3203(96)00065-9.
-10. <a name="10"></a> [http://www.fmwconcepts.com/imagemagick/sahoothresh/index.php](http://www.fmwconcepts.com/imagemagick/sahoothresh/index.php) (Accessed 12 Dec 2021)
-11. <a name="11"></a> FINDME
-12. <a name="12"></a> G. van Rossum and B. Warsaw "Python PEP 7" [https://peps.python.org/pep-0007/](https://peps.python.org/pep-0007/) (Accessed April 2020)
-13. <a name="13"></a> Google et al. "Google Java Style Guide" [https://google.github.io/styleguide/javaguide.html](https://google.github.io/styleguide/javaguide.html) (Accessed April 2022)
+2. fineEmbStudio2021
+3. Edutech format description (eduTechWikiDST)
+4. KDE Liberty Description (libertyTajima)
+5. The Sewing Witch _PCD2FMT_ [http://www.sewingwitch.com/sewing/bin/pcd2fmt.html](http://www.sewingwitch.com/sewing/bin/pcd2fmt.html) (Accessed November 2021)
+6. [http://steve-jansen.github.io/guides/windows-batch-scripting/part-7-functions.html](http://steve-jansen.github.io/guides/windows-batch-scripting/part-7-functions.html)
+7. [https://stackoverflow.com/questions/16286134/imagemagick-how-can-i-work-with-histogram-result](https://stackoverflow.com/questions/16286134/imagemagick-how-can-i-work-with-histogram-result)
+8. Fritzing [https://github.com/fritzing/fritzing-app](https://github.com/fritzing/fritzing-app)
+9. Sahoo, P., Wilkins, C., and Yeager, J., “Threshold selection using Renyi's entropy”, _Pattern Recognition_, vol. 30, no. 1, pp. 71–84, 1997. doi:10.1016/S0031-3203(96)00065-9.
+10. [http://www.fmwconcepts.com/imagemagick/sahoothresh/index.php](http://www.fmwconcepts.com/imagemagick/sahoothresh/index.php) (Accessed 12 Dec 2021)
+11. FINDME
+12. G. van Rossum and B. Warsaw "Python PEP 7" [https://peps.python.org/pep-0007/](https://peps.python.org/pep-0007/) (Accessed April 2020)
+13. Google et al. "Google Java Style Guide" [https://google.github.io/styleguide/javaguide.html](https://google.github.io/styleguide/javaguide.html) (Accessed April 2022)
 \end{verbatim}
-
-\chapter{Embroidermodder v2.0-alpha Manual}
-
-\section{Abstract}
-
-\section{Overview}
-
-\section{Features}
-
-Embroidermodder 2 has many advanced features that enable you to create awesome designs quicker, tweak existing designs to perfection, and can be fully customized to fit your workflow.
-
-A summary of these features:
-
-* [Cross Platform](cross-platform)
-* [Realistic rendering](anchorRealRender)
-* [Various grid types and auto-adjusting rulers](anchorGridRuler)
-* [Many measurement tools](anchorMultiMeasure)
-* [Add text to any design](anchorText)
-* [Supports many formats](anchorFormats)
-* [Batch Conversion](anchorBatch)
-* [Scripting API](anchorScriptingAPI)
-
-\subsection{Cross Platform}
-
-If you use multiple operating systems, it's important to choose software that works on all of them.
-
-Embroidermodder 2 runs on Windows, Linux and Mac OS X. Let's not forget the Raspberry Pi (\url{http://www.raspberrypi.org}).
-
-\begin{center}
-\includegraphics[width=0.9\textwidth]{images/features-platforms-1.png}
-\end{center}
-
-\subsection{Realistic Rendering}
-% <a name="anchorRealRender"></a>
-
-It is important to be able to visualize what a design will look like when stitched and our pseudo ``3D'' realistic rendering helps achieve this.
-
-Realistic rendering sample \#1:
-
-\includegraphics[width=0.9\textwidth]{images/features-realrender-1.png}
-
-Realistic rendering sample \#2:
-
-\includegraphics[width=0.9\textwidth]{images/features-realrender-2.png}
-
-Realistic rendering sample \#3:
-
-\includegraphics[width=0.9\textwidth]{images/features-realrender-3.png}
-
-%<a name=``anchorGridRuler``></a>
-Various grid types and auto-adjusting rulers
-
-Making use of the automatically adjusting ruler in conjunction with the grid will ensure your design is properly sized and fits within your embroidery hoop area.
-
-Use rectangular, circular or isometric grids to construct your masterpiece!
-
-Multiple grids and rulers in action:
-
-\includegraphics[width=0.9\textwidth]{images/features-grid-ruler-1.png}
-
-\subsection{Many measurement tools}
-%<a name="anchorMultiMeasure"></a>
-
-Taking measurements is a critical part of creating great designs. Whether you are designing mission critical embroidered space suits for NASA or some other far out design for your next meet-up, you will have precise measurement tools at your command to make it happen. You can locate individual points or find distances between any 2 points anywhere in the design!
-
-Take quick and accurate measurements:
-
-\includegraphics[width=0.9\textwidth]{images/features-measure-1.png}
-
-\subsection{Add text to any design}
-%<a name=``anchorText``></a>
-
-Need to make company apparel for all of your employees with individual names on them? No sweat. Just simply add text to your existing design or create one from scratch, quickly and easily.
-Didn't get it the right size or made a typo? No problem. Just select the text and update it with the property editor.
-
-Add text and adjust its properties quickly:
-
-\includegraphics[width=0.9\textwidth]{images/features-text-1.png}
-
-\subsection{Supports many formats}
-%<a name="anchorFormats"></a>
-
-Embroidery machines all accept different formats. There are so many formats available that it can sometimes be confusing whether a design will work with your machine.
-
-Embroidermodder 2 supports a wide variety of embroidery formats as well as several vector formats, such as SVG and DXF. This allows you to worry less about which designs you can use.
-
-\subsection{Batch Conversion}
-%<a name=``anchorBatch``></a>
-
-Need to send a client several different formats? Just use libembroidery-convert, our command line utility which supports batch file conversion.
-
-There are a multitude of formats to choose from:
-
-\includegraphics[width=0.9\textwidth]{images/features-formats-1.png}
-
-\subsection{Scripting API}
-%<a name=``anchorScriptingAPI``></a>
-
-If you've got programming skills and there is a feature that isn't currently available that you absolutely cannot live without, you have the capability to create your own custom commands for Embroidermodder 2. We provide an QtScript API which exposes various application functionality so that it is possible to extend the application without requiring a new release. If you have created a command that you think is worth including in the next release, just <a href=``contact.html``>contact us</a> and we will review it for functionality, bugs, and finally inclusion.
-
-An Embroidermodder 2 command excerpt:
-
-\includegraphics[width=0.9\textwidth]{images/features-scripting-1.png}
-
-\section{Contributing}
-
-\subsection{Version Control}
-
-Being an open source project, developers can grab the latest code at any time
-and attempt to build it themselves. We try our best to ensure that it will build smoothly
-at any time, although occasionally we do break the build. In these instances,
-please provide a patch, pull request which fixes the issue or open an issue and
-notify us of the problem, as we may not be aware of it and we can build fine.
-
-Try to group commits based on what they are related to: features/bugs/comments/graphics/commands/etc...
-
-See the coding style [here](libembroidery\_style.md)
-
-\section{Table of Contents}
-
-  1. [Introduction](introduction)
-  2. [Basic Features](basic-features)
-  3. [Advanced Features](advanced-features)
-  4. [Other Projects](other-projects)
-  5. [References](References)
-
-\section{Introduction}
-
-\section{Basic Features}
-
-\subsection{Move a single stitch in an existing pattern}
-
-\begin{enumerate}
-\item In the `File' menu, click `Open...'. When the open dialog appears find
-  and select your file by double clicking the name of the file. Alternatively,
-  left click the file once then click the `Open` button.
-\item
-\item In the `File' menu
-\end{enumerate}
-
-TIP: For users who prefer
-
-\subsection{Convert one pattern to another format}
-
-\begin{enumerate}
-\item In the `File` menu, click `Open...`.
-\item The 
-\item In the dropdown menu within the save dialog select the 
-\end{enumerate}
-
-\section{Advanced Features}
-
-\section{Other Projects}
-
-
-\section{References}
-
-
-\subsection{Planning}
-
-To see what's planned open the [Projects](https://github.com/Embroidermodder/Embroidermodder/projects/1) tab which sorts all of the GitHub Issues into columns.
-
-\subsection{Format Support}
-
-\begin{tabular}{l l l l}
-FORMAT & READ & WRITE & NOTES \\
-\hline
-10o    & YES   &       & read (need to fix external color loading) (maybe find out what ctrl\& code flags of 0x10, 0x08, 0x04, and 0x02 mean) \\
-100    &       &       & none (4 byte codes) 61 00 10 09 (type, type2, x, y ?) x | y (signed char) \\
-art    &       &       & none \\
-bro    & YES   &       & read (complete)(maybe figure out detail of header) \\
-cnd    &       &       & none \\
-col    &       &       & (color file no design) read(final) write(final) \\
-csd    & YES   &       & read (complete) \\
-dat    &       &       & read () \\
-dem    &       &       & none (looks like just encrypted cnd) \\
-dsb    & YES   &       & read (unknown how well) (stitch data looks same as 10o) \\
-dst    & YES   &       & read (complete) / write(unknown) \\
-dsz    & YES   &       & read (unknown) \\
-dxf    &       &       & read (Port to C. needs refactored) \\
-edr    &       &       & read (C version is broken) / write (complete) \\
-emd    &       &       & read (unknown) \\
-exp    & YES   &       & read (unknown) / write(unknown) \\
-exy    & YES   &       & read (need to fix external color loading) \\
-fxy    & YES   &       & read (need to fix external color loading) \\
-gnc    &       &       & none \\
-gt     &       &       & read (need to fix external color loading) \\
-hus    & YES   &       & read (unknown) / write (C version is broken) \\
-inb    & YES   &       & read (buggy?) \\
-jef    & YES   &       & write (need to fix the offsets when it is moving to another spot) \\
-ksm    & YES   &       & read (unknown) / write (unknown) \\
-pcd    &       &       &  \\
-pcm    &       &       & \\
-pcq    &       &       & read (Port to C)\\
-pcs    & BUGGY &       & read (buggy / colors are not correct / after reading, writing any other format is messed up)\\
-pec    &       &       & read / write (without embedded images, sometimes overlooks some stitches leaving a gap)\\
-pel    &       &       & none\\
-pem    &       &       & none\\
-pes    & YES   &       & \\
-phb    &       &       & \\
-phc    &       &       & \\
-rgb    &       &       & \\
-sew    & YES   &       & \\
-shv    &       &       & read (C version is broken)\\
-sst    &       &       & none\\
-svg    &       & YES   & \\
-tap    & YES   &       & read (unknown)\\
-u01    &       &       & \\
-vip    & YES   &       & \\
-vp3    & YES   &       & \\
-xxx    & YES   &       & \\
-zsk    &       &       & read (complete)
-\end{tabular}
-
-Support for Singer FHE, CHE (Compucon) formats?
-
-\section{Embroidermodder Project Coding Standards}
-
-A basic set of guidelines to use when submitting code.
-
-\subsection{Naming Conventions}
-
-Name variables and functions intelligently to minimize the need for comments.
-It should be immediately obvious what information it represents.
-Short names such as x and y are fine when referring to coordinates.
-Short names such as i and j are fine when doing loops.
-
-Variable names should be ``camelCase'', starting with a lowercase word followed by uppercase word(s).
-C++ Class Names should be ``CamelCase'', using all uppercase word(s).
-C Functions that attempt to simulate namespacing, should be ``nameSpace\_camelCase''.
-
-All files and directories shall be lowercase and contain no spaces.
-
-\section{Code Style}
-
-Tabs should not be used when indenting. Setup your IDE or text editor to use 4 spaces.
-
-\subsection{Braces}
-
-For functions: please put each brace on a new line.
-
-\begin{verbatim}
-    void function_definition(int argument)
-    {
-    
-    }
-  \end{verbatim}
-
-For control statements: please put the first brace on the same line.
-
-\begin{verbatim}
-    if (condition) {
-    
-    }
-\end{verbatim}
-
-Use exceptions sparingly.
-
-Do not use ternary operator (?:) in place of if/else.
-
-Do not repeat a variable name that already occurs in an outer scope.
-
-\subsection{Version Control}
-
-Being an open source project, developers can grab the latest code at any time
-and attempt to build it themselves. We try our best to ensure that it will build smoothly
-at any time, although occasionally we do break the build. In these instances,
-please provide a patch, pull request which fixes the issue or open an issue and
-notify us of the problem, as we may not be aware of it and we can build fine.
-
-Try to group commits based on what they are related to: features/bugs/comments/graphics/commands/etc...
-
-\subsection{Comments}
-
-When writing code, sometimes there are items that we know can be improved,
-incomplete or need special clarification. In these cases, use the types of
-comments shown below. They are pretty standard and are highlighted by many editors to
-make reviewing code easier. We also use shell scripts to parse the code to find
-all of these occurrences so someone wanting to go on a bug hunt will be able to
-easily see which areas of the code need more love. Use the same convention
-as libembroidery.
-
-libembroidery is written in C and adheres to C89 standards. This means
-that any C99 or C++ comments will show up as errors when compiling with
-gcc. In any C code, you must use:
-
-\begin{verbatim}
-    /* C Style Comments */
-
-    /* TODO: This code clearly needs more work or further review. */
-
-    /* BUG: This code is definitely wrong. It needs fixed. */
-
-    /* HACK: This code shouldn't be written this way or I don't feel
-     * right about it. There may a better solution */
-
-    /* WARNING: Think twice (or more times) before changing this code.
-     * I put this here for a good reason. */
-
-    /* NOTE: This comment is much more important than lesser comments. */
-\end{verbatim}
-
-\subsection{Donations}
-
-Creating software that interfaces with hardware is costly. A summary of some of the costs involved:
-     
-\begin{itemize}               
-\item Developer time for 2 core developers
-\item Computer equipment and parts
-\item Embroidery machinery
-\item Various electronics
-\item Consumable materials (thread, fabric, stabilizer, etc...)
-\end{itemize}
-
-If you have found our software useful, please consider funding further development by donating to the project [on Open Collective](https://opencollective.com/embroidermodder).
 
 \chapter{Mobile Support: MobileViewer and iMobileViewer}
 
-
-\chapter{Conclusions}
-
-\bibliographystyle{plainnat}
-\bibliography{main.bib}
-
-\appendix
-
-\include{fdl-1.3.tex}
-
-\chapter{Color Charts}
-
-\end{document}\hypertarget{embroidermodder-1.90.0-manual}{%
+\hypertarget{embroidermodder-1.90.0-manual}{%
 \section{Embroidermodder 1.90.0
 Manual}\label{embroidermodder-1.90.0-manual}}
 
@@ -2107,17 +2005,11 @@ Manual}\label{embroidermodder-1.90.0-manual}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  \protect\hyperlink{introduction}{Introduction}
-\item
-  \protect\hyperlink{basic-features}{Basic Features}
-\item
-  \protect\hyperlink{advanced-features}{Advanced Features}
-\item
-  \protect\hyperlink{other-projects}{Other Projects}
-\item
-  \protect\hyperlink{References}{References}
+\item \protect\hyperlink{introduction}{Introduction}
+\item \protect\hyperlink{basic-features}{Basic Features}
+\item \protect\hyperlink{advanced-features}{Advanced Features}
+\item \protect\hyperlink{other-projects}{Other Projects}
+\item \protect\hyperlink{References}{References}
 \end{enumerate}
 
 \hypertarget{introduction}{%
@@ -2132,7 +2024,6 @@ pattern}\label{move-a-single-stitch-in-an-existing-pattern}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   In the \texttt{File} menu, click \texttt{Open...}. When the open
   dialog appears find and select your file by double clicking the name
@@ -2151,7 +2042,6 @@ format}\label{convert-one-pattern-to-another-format}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   In the \texttt{File} menu, click \texttt{Open...}.
 \item
@@ -2192,7 +2082,6 @@ effect people who use our software.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   Googletests require a web connection to update and they update on each
   compilation.
@@ -2297,7 +2186,6 @@ CAD command review:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   scale
 \item
@@ -2439,7 +2327,6 @@ So:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   Port \texttt{settings.ini} to \texttt{settings.json}.
 \item
@@ -2458,7 +2345,6 @@ So:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   We need to hand-write \emph{a} system because the current system is Qt
   dependent anyway.
@@ -2553,7 +2439,6 @@ confused by. Libembroidery would be a good fit for advanced features.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   Check for memory leaks
 \item
@@ -2585,7 +2470,6 @@ pattern}\label{move-a-single-stitch-in-an-existing-pattern-1}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   In the \texttt{File} menu, click \texttt{Open...}. When the open
   dialog appears find and select your file by double clicking the name
@@ -2604,7 +2488,6 @@ format}\label{convert-one-pattern-to-another-format-1}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   In the \texttt{File} menu, click \texttt{Open...}.
 \item
@@ -2631,431 +2514,6 @@ tab which sorts all of the GitHub Issues into columns.
 
 \hypertarget{format-support}{%
 \subsection{Format Support}\label{format-support}}
-
-\begin{longtable}[]{@{}llll@{}}
-\toprule
-\begin{minipage}[b]{0.19\columnwidth}\raggedright
-FORMAT\strut
-\end{minipage} & \begin{minipage}[b]{0.22\columnwidth}\raggedright
-READ\strut
-\end{minipage} & \begin{minipage}[b]{0.25\columnwidth}\raggedright
-WRITE\strut
-\end{minipage} & \begin{minipage}[b]{0.22\columnwidth}\raggedright
-NOTES\strut
-\end{minipage}\tabularnewline
-\midrule
-\endhead
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-10o\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-YES\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-read (need to fix external color loading) (maybe find out what
-ctrl\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-100\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-none (4 byte codes) 61 00 10 09 (type, type2, x, y ?) x \& y (signed
-char)\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-art\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-none\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-bro\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-YES\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-read (complete)(maybe figure out detail of header)\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-cnd\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-none\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-col\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-(color file no design) read(final) write(final)\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-csd\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-YES\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-read (complete)\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-dat\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-read ()\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-dem\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-none (looks like just encrypted cnd)\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-dsb\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-YES\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-read (unknown how well) (stitch data looks same as 10o)\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-dst\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-YES\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-read (complete) / write(unknown)\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-dsz\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-YES\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-read (unknown)\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-dxf\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-read (Port to C. needs refactored)\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-edr\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-read (C version is broken) / write (complete)\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-emd\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-read (unknown)\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-exp\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-YES\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-read (unknown) / write(unknown)\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-exy\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-YES\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-read (need to fix external color loading)\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-fxy\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-YES\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-read (need to fix external color loading)\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-gnc\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-none\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-gt\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-read (need to fix external color loading)\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-hus\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-YES\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-read (unknown) / write (C version is broken)\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-inb\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-YES\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-read (buggy?)\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-jef\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-YES\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-write (need to fix the offsets when it is moving to another spot)\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-ksm\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-YES\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-read (unknown) / write (unknown)\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-pcd\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-pcm\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-pcq\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-read (Port to C)\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-pcs\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-BUGGY\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-read (buggy / colors are not correct / after reading, writing any other
-format is messed up)\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-pec\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-read / write (without embedded images, sometimes overlooks some stitches
-leaving a gap)\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-pel\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-none\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-pem\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-none\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-pes\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-YES\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-phb\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-phc\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-rgb\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-sew\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-YES\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-shv\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-read (C version is broken)\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-sst\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-none\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-svg\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-YES\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-tap\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-YES\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-read (unknown)\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-u01\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-vip\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-YES\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-vp3\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-YES\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-xxx\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-YES\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.19\columnwidth}\raggedright
-zsk\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.25\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-read (complete)\strut
-\end{minipage}\tabularnewline
-\bottomrule
-\end{longtable}
 
 Support for Singer FHE, CHE (Compucon) formats?
 
@@ -3181,7 +2639,6 @@ effect people who use our software.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   Googletests require a web connection to update and they update on each
   compilation.
@@ -3286,7 +2743,6 @@ CAD command review:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   scale
 \item
@@ -3428,7 +2884,6 @@ So:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   Port \texttt{settings.ini} to \texttt{settings.json}.
 \item
@@ -3447,7 +2902,6 @@ So:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   We need to hand-write \emph{a} system because the current system is Qt
   dependent anyway.
@@ -3542,7 +2996,6 @@ confused by. Libembroidery would be a good fit for advanced features.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
   Check for memory leaks
 \item
@@ -3561,3 +3014,16 @@ apt install google-android-ndk-installer cmake lldb gradle
 
 \hypertarget{bibilography-1}{%
 \subsection{Bibilography}\label{bibilography-1}}
+
+\chapter{Conclusions}
+
+\bibliographystyle{plainnat}
+\bibliography{main.bib}
+
+\appendix
+
+\include{fdl-1.3.tex}
+
+\chapter{Color Charts}
+
+\end{document}
