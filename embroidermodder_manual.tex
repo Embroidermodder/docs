@@ -479,7 +479,7 @@ some kind.
 
 \section{Dependencies and Build}
 
-\chapter{Plans}
+\section{Plans}
 
 \subsubsection{Windows Specific Advice}
 
@@ -491,15 +491,16 @@ this section is to help people who've not got a build environment to start with.
 \item Boot "Mintty" from the Start menu.
 \item Use the commands:
 
-\begin{verbatim}
-$ pacman -S gcc cmake git bash mingw-w64-SDL2 mingw-w64-SDL2_image mingw-w64-SDL2_ttf
+\begin{lstlisting}
+$ pacman -S gcc cmake git bash mingw-w64-SDL2 \
+     mingw-w64-SDL2_image mingw-w64-SDL2_ttf
 $ git clone https://github.com/Embroidermodder/Embroidermodder
 $ cd Embroidermodder
 $ bash build.sh
-\end{verbatim}
+\end{lstlisting}
 \end{enumerate}
 
-\subsubsection Mobile
+\subsubsection{Mobile}
 
 These are currently unsupported (see iMobileViewer and Mobileviewer for
 iOS and Android respectively), but after the Desktop version is
@@ -511,13 +512,7 @@ so development of the Desktop version will help us make both.
 \subsection{Documentation}
 
 The documentation is in the form of the website (included in the `docs/`
-directory) and the printed docs in the three files:
-
-\begin{itemize}
-\item docs/libembroidery\_0.1\_manual.pdf
-\item docs/embroidermodder\_1.90.0\_user\_manual.pdf
-\item docs/embroidermodder\_1.90.0\_developer\_notes.pdf
-\end{itemize}
+directory) and the printed docs in this file.
 
 \subsection{Development}
 
@@ -747,15 +742,15 @@ Note that most of these features will be released with version 2.1, which is pla
 \item EmbroideryFLOSS - Color picker that displays catalog numbers and names
 \item Setting for reverse scrolling direction (for zoom, vertical pan)
 \item Stitching simulation
-8. User designed custom fill
-9. Keyboard zooming, panning
-10. Advanced printing
-11. Libembroidery 1.0
-12. Better integrated help: I don't think the help should backend to a html file somewhere on the user's system. A better system would be a custom widget within the program that's searchable.
-13. New embroidermodder2.ico 16x16 logo that looks good at that scale.
-14. saving dst, pes, jef
-15. Settings dialog: notify when the user is switching tabs that the setting has been changed, adding apply button is what would make sense for this to happen.
-16. Update language translations
+\item User designed custom fill
+\item Keyboard zooming, panning
+\item Advanced printing
+\item Libembroidery 1.0
+\item Better integrated help: I don't think the help should backend to a html file somewhere on the user's system. A better system would be a custom widget within the program that's searchable.
+\item New embroidermodder2.ico 16x16 logo that looks good at that scale.
+\item saving dst, pes, jef
+\item Settings dialog: notify when the user is switching tabs that the setting has been changed, adding apply button is what would make sense for this to happen.
+\item Update language translations
 17. Replace KDE4 thumbnailer.
 18. Import raster image
 19. Statistics from 1.0, needs histogram.
@@ -786,59 +781,7 @@ These are key bits of reasoning behind why the software is built the way it is.
 
 \subsubsection{CAD command review}
 
-\begin{tabular}{l l l l}
-ID & Name & Arguments & Description \\
-\hline
-0 & newfile & none & Create a new EmbPattern with a new tab in the GUI. \\
-| 1 & openfile & `char *fname;` & Open an EmbPattern with the supplied filename `fname`. \\
-| 2 & savefile & `char *fname;` & Save the current loaded EmbPattern to the supplied filname `fname`. \\
-| 1 & scale & selected objects, 1 float & Scale all selected objects by the number supplied, without selection scales the entire design \\
-| 2 & circle & mouse co-ords & Adds a circle to the design based on the supplied numbers, converts to stitches on save for stitch only formats. \\
-| 3 & offset & mouse co-ords & Shifts the selected objects by the amount given by the mouse co-ordinates. \\
-| 4 & extend & | \\
-| 5 & trim & | \\
-| 6 & BreakAtPoint & | \\
-| 7 & Break2Points & | \\
-| 8 & Fillet & | \\
-| 9 & star & | \\
-| 10 & singlelinetext & | \\
-| 11 & Chamfer & | \\
-| 12 & split & | \\
-| 13 & area & | \\
-| 14 & time & | \\
-| 15 & pickadd & | \\
-| 16 & zoomfactor & | \\
-| 17 & product & | \\
-| 18 & program & | \\
-| 19 & zoomwindow & | \\
-| 20 & divide & | \\
-| 21 & find & | \\
-| 22 & record & | \\
-| 23 & playback & | \\
-| 24 & rotate & & \\
-25 & rgb & & \\
-26 & move & & \\
-| 27 & grid & & \\
-28 & griphot &  & \\
-29 & gripcolor & & \\
-30 & gripcool &  & \\
-31 & gripsize &  & \\
-32 & highlight &  & \\
-33 & units &  & \\
-34 & locatepoint &  & \\
-35 & distance &  & \\
-36 & arc &  & \\
-37 & ellipse &  & \\
-38 & array &  & \\
-39 & point &  & \\
-40 & polyline &  & \\
-41 & polygon &  & \\
-42 & rectangle &  & \\
-43 & line &  & \\
-44 & arc (rt) &  & \\
-45 & dolphin &  & \\
-46 & heart &  &
-\end{tabular}
+\input{table_cad_commands.tex}
 
 \subsubsection{Removed Elements}
 
@@ -908,27 +851,26 @@ Only do this once per minor version number.
 
 Originally Embroidermodder had a terminal widget, this is why we removed it.
 
-\begin{verbatim}
+\begin{quote}
+ROBIN: I think supporting scripting within Embroidermodder doesn't make sense.
 
-> ROBIN: I think supporting scripting within Embroidermodder doesn't make sense.
->
->  All features that use scripting can be part of libembroidery instead.
-> Users who are capable of using scripting won't need it, they can alter their embroidery files in CSV format, or import pyembroidery to get access.
-> It makes maintaining the code a lot more complicated, especially if we move away from Qt.
->     Users who don't want the scripting feature will likely be confused by it, since we say that's what libembroidery, embroider and pyembroidery are for.
-> 
-> How about a simpler ``call user shell`` feature? Similar to texmaker we just call system on a batch or shell script supplied by the user and it processes the file directly then the software reloads the file. Then we aren't parsing it directly.
-> 
->I don't want to change this without Josh's support because it's a fairly major change.
-> 
->> JOSH: I totally agree.
->>
->> I like the idea of scripting just so people that know how to code could write their own designs without needing to fully build the app. Scripting would be a very advanced feature that most users would be confused by. Libembroidery would be a good fit for advanced features.
+All features that use scripting can be part of libembroidery instead.
+Users who are capable of using scripting won't need it, they can alter their embroidery files in CSV format, or import pyembroidery to get access.
+It makes maintaining the code a lot more complicated, especially if we move away from Qt.
+Users who don't want the scripting feature will likely be confused by it, since we say that's what libembroidery, embroider and pyembroidery are for.
+
+How about a simpler ``call user shell`` feature? Similar to texmaker we just call system on a batch or shell script supplied by the user and it processes the file directly then the software reloads the file. Then we aren't parsing it directly.
+
+I don't want to change this without Josh's support because it's a fairly major change.
+
+JOSH: I totally agree.
+
+I like the idea of scripting just so people that know how to code could write their own designs without needing to fully build the app. Scripting would be a very advanced feature that most users would be confused by. Libembroidery would be a good fit for advanced features.
+\end{quote}
 
 Now we are using Python (again, sort of) this would be a lot more natural,
 perhaps we could boot the software without blocking the shell so they can
 interact? TODO: Screenshot a working draft to demonstrate.
-\end{verbatim}
 
 \subsection{Perennial Jobs}
 
@@ -950,8 +892,117 @@ interact? TODO: Screenshot a working draft to demonstrate.
 
 \chapter{The Command Line Interface: \texttt{embroider}}
 
-\section{Usage}
+\subsection{Usage}
 
+For basic use, we recommend you build as above, then run without arguments:
+
+\begin{verbatim}
+    $ embroider
+\end{verbatim}
+
+which will print out this advice on how to use these tools without digging straight into the rest of this manual.
+
+\input{help_message.tex}
+
+For each of the flags described here we will go into greater detail in this manual.
+
+\subsubsection{To Flag}
+
+\subsubsection{Circle Flag}
+
+\subsubsection{Ellipse Flag}
+
+\subsubsection{Line Flag}
+
+\subsubsection{Polyline Flag}
+
+\subsubsection{Polygon Flag}
+
+\subsubsection{Satin Flag}
+
+\subsubsection{Stitch Flag}
+
+\subsubsection{Basic Test Suite}
+
+The flag \texttt{--test} runs the tests that take the least time and have the most utility. If you're submitting a patch for review, please run:
+
+\begin{verbatim}
+    $ embroider --test | tail -n 1
+\end{verbatim}
+
+You'll be presented with an overall PASS or FAIL for your build,
+if your build fails you can try and trace the error with:
+
+\begin{verbatim}
+    $ valgrind embroider --verbose --test
+  \end{verbatim}
+
+or
+
+\begin{verbatim}
+    $ gdb --args embroider --verbose --test
+  \end{verbatim}
+
+depending on your preferred debugging approach. Passing this test
+will be required for us to accept your patch.
+
+\subsubsection{Full Test Suite}
+
+The flag \texttt{--full-test-suite} runs all the tests that have been written.
+Since this results in a lot of output the details are both to stdout
+and to a text file called `test\_matrix.txt`.
+
+Patches that strictly improve the results in the `test\_matrix.txt` over
+the current version will likely be accepted and it'll be a good place
+to go digging for contributions. (Note: strictly improve means that
+the testing result for each test is as good a result, if not better.
+Sacrificing one critera for another would require some design work
+before we would consider it.)
+
+\subsection{Ideas}
+
+\subsubsection{Rendering system}
+
+There are two forms of render that will be produced.
+
+1. A raster format as ppm so we can have a pixel for pixel output (for example extracting the embedded images in some formats).
+2. The SVG format that will be fairly similar to InkStitch's format.
+
+We have an EmbImage struct to store the raster format.
+
+\begin{verbatim}
+$ embroider test01.csv --render
+\end{verbatim}
+
+currently creates a blank image. Previously the Hilbert curve test managed to
+create a correctly rendered version.
+
+
+\subsubsection{Tactile art and braille support}
+
+One application I'd like to leave a reminder here for is automating embroidery
+for blind and partially sighted people.
+
+There are many limitations to making braille (cost, poor support, lack of
+widespread adoption in the sighted world) and as such there is a strong DIY
+culture around it.
+
+There are blind internet users who can also run terminal applications using a
+refreshable braille display, so in theory we could support an application like
+this for them:
+
+\begin{verbatim}
+    $ embroider --braille ``Hello, world!`` hello.dst
+\end{verbatim}
+
+which would produce braille that would read ``Hello, world!`` as an embroidery design.
+
+Another option is tactile fills that use the same fill algorithms but are
+designed better to facilitate tactile art.
+
+I think the way forward on this is to call up the RNIB business advice line and ask for assistance once we have a working model. That way they can get us in contact with experts to review how legible the output is and usable the software is for the intended audience.
+
+This is less important than getting better machine support but given the high social impact I think it should be a priority.
 
 \chapter{The Low Level API: Libembroidery \libembversion}
 
@@ -1038,136 +1089,7 @@ curl https://embroidermodder.org/libembroidery_debugger.sh | sh
 
 While we will attempt to maintain good results from this script as part of normal development it should be the first point of failure on any system we haven't tested or format we understand less.
 
-\subsection{Usage}
 
-For basic use, we recommend you build as above, then run without arguments:
-
-\begin{verbatim}
-    $ embroider
-\end{verbatim}
-
-which will print out this advice on how to use these tools without digging straight into the rest of this manual.
-
-\begin{verbatim}
-    EMBROIDER
-        A command line program for machine embroidery.
-        Copyright 2013-2021 The Embroidermodder Team
-        Licensed under the terms of the zlib license.
-
-        https://github.com/Embroidermodder/libembroidery
-        https://embroidermodder.org
-
-    Usage: embroider [OPTIONS] fileToRead...
-
-    Conversion:
-    -t, -to         Convert all files given to the format specified
-                    by the arguments to the flag, for example:
-                        $ embroider -t dst input.pes
-                    would convert \``input.pes\`` to \``input.dst\``
-                    in the same directory the program runs in.
-
-                    The accepted input formats are (TO BE DETERMINED).
-                    The accepted output formats are (TO BE DETERMINED).
-
-    Output:
-    -h, -help       Print this message.
-    -f, -format     Print help on the formats that
-                    embroider can deal with.
-    -q, -quiet      Only print fatal errors.
-    -V, -verbose    Print everything that has reporting.
-    -v, -version    Print the version.
-
-    Graphics:
-    -c, -circle     Add a circle defined by the arguments
-                    given to the current pattern.
-    -e, -ellipse    Add a circle defined by the arguments
-                    given to the current pattern.
-    -l, -line       Add a line defined by the arguments
-                    given to the current pattern.
-    -P, -polyline   Add a polyline.
-    -p, -polygon    Add a polygon.
-    -s, -satin      Fill the current geometry with satin
-                    stitches according
-                    to the defined algorithm.
-    -S, -stitch     Add a stitch defined by the arguments
-                    given to the current pattern.
-
-    Quality Assurance:
-        -test       Run the test suite.
-\end{verbatim}
-
-For each of the flags described here we will go into greater detail in this manual.
-
-\subsubsection{To Flag}
-
-\subsubsection{Circle Flag}
-
-\subsubsection{Ellipse Flag}
-
-\subsubsection{Line Flag}
-
-\subsubsection{Polyline Flag}
-
-\subsubsection{Polygon Flag}
-
-\subsubsection{Satin Flag}
-
-\subsubsection{Stitch Flag}
-
-\subsubsection{Basic Test Suite}
-
-The flag \texttt{--test} runs the tests that take the least time and have the most utility. If you're submitting a patch for review, please run:
-
-\begin{verbatim}
-    $ embroider --test | tail -n 1
-\end{verbatim}
-
-You'll be presented with an overall PASS or FAIL for your build,
-if your build fails you can try and trace the error with:
-
-\begin{verbatim}
-    $ valgrind embroider --verbose --test
-  \end{verbatim}
-
-or
-
-\begin{verbatim}
-    $ gdb --args embroider --verbose --test
-  \end{verbatim}
-
-depending on your preferred debugging approach. Passing this test
-will be required for us to accept your patch.
-
-\subsubsection{Full Test Suite}
-
-The flag \texttt{--full-test-suite} runs all the tests that have been written.
-Since this results in a lot of output the details are both to stdout
-and to a text file called `test\_matrix.txt`.
-
-Patches that strictly improve the results in the `test\_matrix.txt` over
-the current version will likely be accepted and it'll be a good place
-to go digging for contributions. (Note: strictly improve means that
-the testing result for each test is as good a result, if not better.
-Sacrificing one critera for another would require some design work
-before we would consider it.)
-
-\subsection{Ideas}
-
-\subsubsection{Rendering system}
-
-There are two forms of render that will be produced.
-
-1. A raster format as ppm so we can have a pixel for pixel output (for example extracting the embedded images in some formats).
-2. The SVG format that will be fairly similar to InkStitch's format.
-
-We have an EmbImage struct to store the raster format.
-
-\begin{verbatim}
-$ embroider test01.csv --render
-\end{verbatim}
-
-currently creates a blank image. Previously the Hilbert curve test managed to
-create a correctly rendered version.
 
 \subsubsection{Binary download}
 
@@ -1185,32 +1107,6 @@ without building.
 
 The chart of successful from-to conversions (previously a separate issue)
 is something that should appear in the README.
-
-\subsubsection{Tactile art and braille support}
-
-One application I'd like to leave a reminder here for is automating embroidery
-for blind and partially sighted people.
-
-There are many limitations to making braille (cost, poor support, lack of
-widespread adoption in the sighted world) and as such there is a strong DIY
-culture around it.
-
-There are blind internet users who can also run terminal applications using a
-refreshable braille display, so in theory we could support an application like
-this for them:
-
-\begin{verbatim}
-    $ embroider --braille ``Hello, world!`` hello.dst
-\end{verbatim}
-
-which would produce braille that would read ``Hello, world!`` as an embroidery design.
-
-Another option is tactile fills that use the same fill algorithms but are
-designed better to facilitate tactile art.
-
-I think the way forward on this is to call up the RNIB business advice line and ask for assistance once we have a working model. That way they can get us in contact with experts to review how legible the output is and usable the software is for the intended audience.
-
-This is less important than getting better machine support but given the high social impact I think it should be a priority.
 
 \subsection{Development}
 
@@ -1287,12 +1183,12 @@ We currently need help with:
 Beyond this the development targets are categories sorted into:
 
 \begin{enumerate}
-\item [Basic Features](\#basic-features)
-\item [Code quality and user friendliness](\#code-quality-and-user-friendliness)
-\item [embroider CLI](\#embroider-cli)
-\item [Documentation](\#documentation)
-\item [GUI](\#gui)
-\item [electronics development](\#electronics-development)
+\item Basic Features
+\item Code quality and user friendliness
+\item embroider CLI
+\item Documentation
+\item GUI
+\item electronics development
 \end{enumerate}
 
 \subsubsection{Basic features}
@@ -1650,23 +1546,23 @@ Stitch Only Format.
 
 Stitch Only Format.
 
-\subsubsection 1.7.30. Pfaff Embroidery Format (.max)
+\subsubsection{Pfaff Embroidery Format (.max)}
 
 Stitch Only Format.
 
-\subsubsection 1.7.31. Mitsubishi Embroidery Format (.mit)
+\subsubsection{Mitsubishi Embroidery Format (.mit)}
 
 Stitch Only Format.
 
-\subsubsection 1.7.32. Ameco Embroidery Format (.new)
+\subsubsection{Ameco Embroidery Format (.new)}
 
 Stitch Only Format.
 
-\subsubsection 1.7.33. Melco Embroidery Format (.ofm)
+\subsubsection{Melco Embroidery Format (.ofm)}
 
 Stitch Only Format.
 
-\subsubsection 1.7.34. Pfaff PCD File Format
+\subsubsection{Pfaff PCD File Format}
 
 Stitch Only Format.
 
@@ -1676,15 +1572,15 @@ See the description here ([5](link to 5)) for the overview of the format.
 
 For an example of the format see ([11](link to 11)).
 
-\subsubsection 1.7.35. Pfaff Embroidery Format (.pcm)
+\subsubsection{Pfaff Embroidery Format (.pcm)}
 
 The Pfaff pcm format is stitch-only.
 
-\subsubsection 1.7.36. Pfaff Embroidery Format (.pcq)
+\subsubsection{Pfaff Embroidery Format (.pcq)}
 
 The Pfaff pcq format is stitch-only.
 
-\subsubsection 1.7.37. Pfaff Embroidery Format (.pcs)
+\subsubsection{Pfaff Embroidery Format (.pcs)}
 
 The Pfaff pcs format is stitch-only.
 
@@ -1704,35 +1600,35 @@ The Brother pem format is stitch-only.
 
 The Brother pes format is stitch-only.
 
-\subsubsection 1.7.42. Brother Embroidery Format (.phb)
+\subsubsection{Brother Embroidery Format (.phb)}
 
 The Brother phb format is stitch-only.
 
-\subsubsection 1.7.43. Brother Embroidery Format (.phc)
+\subsubsection{Brother Embroidery Format (.phc)}
 
 The Brother phc format is stitch-only.
 
-\subsubsection 1.7.44. AutoCAD Embroidery Format (.plt)
+\subsubsection{AutoCAD Embroidery Format (.plt)}
 
 The AutoCAD plt format is stitch-only.
 
-\subsubsection 1.7.45. RGB Embroidery Format (.rgb)
+\subsubsection{RGB Embroidery Format (.rgb)}
 
 The RGB format is a color-only format to act as an external color file for other formats.
 
-\subsubsection 1.7.46. Janome Embroidery Format (.sew)
+\subsubsection{Janome Embroidery Format (.sew)}
 
 The Janome sew format is stitch-only.
 
-\subsubsection 1.7.47. Husqvarna Viking Embroidery Format (.shv)
+\subsubsection{Husqvarna Viking Embroidery Format (.shv)}
 
 The Husqvarna Viking shv format is stitch-only.
 
-\subsubsection 1.7.48. Sunstar Embroidery Format (.sst)
+\subsubsection{Sunstar Embroidery Format (.sst)}
 
 The Sunstar sst format is stitch-only.
 
-\subsubsection 1.7.49. Data Stitch Embroidery Format (.stx)
+\subsubsection{Data Stitch Embroidery Format (.stx)}
 
 The Data Stitch stx format is stitch-only.
 
@@ -1741,7 +1637,7 @@ The Data Stitch stx format is stitch-only.
 The scalable vector graphics (SVG) format is a graphics format
 maintained by ...
 
-\subsubsection Pfaff Embroidery Format (.t01)
+\subsubsection{Pfaff Embroidery Format (.t01)}
 
 The Pfaff t01 format is stitch-only.
 
@@ -2182,111 +2078,11 @@ effect people who use our software.
   Custom filter bug -- doesn't save changes in some cases.
 \end{enumerate}
 
-CAD command review:
+\subsubsection{Fix for Version 2.1}
+\label{fix-for-version-2.1}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  scale
-\item
-  circle
-\item
-  offset
-\item
-  extend
-\item
-  trim
-\item
-  BreakAtPoint
-\item
-  Break2Points
-\item
-  Fillet
-\item
-  star
-\item
-  singlelinetext
-\item
-  Chamfer
-\item
-  split
-\item
-  area
-\item
-  time
-\item
-  pickadd
-\item
-  zoomfactor
-\item
-  product
-\item
-  program
-\item
-  zoomwindow
-\item
-  divide
-\item
-  find
-\item
-  record
-\item
-  playback
-\item
-  rotate
-\item
-  rgb
-\item
-  move
-\item
-  grid
-\item
-  griphot
-\item
-  gripcolor
-\item
-  gripcool
-\item
-  gripsize
-\item
-  highlight
-\item
-  units
-\item
-  locatepoint
-\item
-  distance
-\item
-  arc
-\item
-  ellipse
-\item
-  array
-\item
-  point
-\item
-  polyline
-\item
-  polygon
-\item
-  rectangle
-\item
-  line
-\item
-  arc (rt)
-\item
-  dolphin
-\item
-  heart
-\end{enumerate}
-
-So, it means weighing up some simplifications.
-
-\hypertarget{fix-for-version-2.1}{%
-\subsubsection{Fix for Version 2.1}\label{fix-for-version-2.1}}
-
-\hypertarget{fix-eventually}{%
-\subsubsection{Fix eventually}\label{fix-eventually}}
+\subsubsection{Fix eventually}
+\label{fix-eventually}
 
 \hypertarget{googletests}{%
 \subsubsection{googletests}\label{googletests}}
@@ -2739,114 +2535,14 @@ effect people who use our software.
   Custom filter bug -- doesn't save changes in some cases.
 \end{enumerate}
 
-CAD command review:
+\subsubsection{Fix for Version 2.1}
+\label{fix-for-version-2.1-1}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  scale
-\item
-  circle
-\item
-  offset
-\item
-  extend
-\item
-  trim
-\item
-  BreakAtPoint
-\item
-  Break2Points
-\item
-  Fillet
-\item
-  star
-\item
-  singlelinetext
-\item
-  Chamfer
-\item
-  split
-\item
-  area
-\item
-  time
-\item
-  pickadd
-\item
-  zoomfactor
-\item
-  product
-\item
-  program
-\item
-  zoomwindow
-\item
-  divide
-\item
-  find
-\item
-  record
-\item
-  playback
-\item
-  rotate
-\item
-  rgb
-\item
-  move
-\item
-  grid
-\item
-  griphot
-\item
-  gripcolor
-\item
-  gripcool
-\item
-  gripsize
-\item
-  highlight
-\item
-  units
-\item
-  locatepoint
-\item
-  distance
-\item
-  arc
-\item
-  ellipse
-\item
-  array
-\item
-  point
-\item
-  polyline
-\item
-  polygon
-\item
-  rectangle
-\item
-  line
-\item
-  arc (rt)
-\item
-  dolphin
-\item
-  heart
-\end{enumerate}
+\subsubsection{Fix eventually}
+\label{fix-eventually-1}
 
-So, it means weighing up some simplifications.
-
-\hypertarget{fix-for-version-2.1-1}{%
-\subsubsection{Fix for Version 2.1}\label{fix-for-version-2.1-1}}
-
-\hypertarget{fix-eventually-1}{%
-\subsubsection{Fix eventually}\label{fix-eventually-1}}
-
-\hypertarget{googletests-1}{%
-\subsubsection{googletests}\label{googletests-1}}
+\subsubsection{googletests}
+\label{googletests-1}
 
 gtests are non-essential, testing is for developers not users so we can
 choose our own framework. I think the in-built testing for libembroidery

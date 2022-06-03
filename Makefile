@@ -25,11 +25,10 @@ website:
 	rm stor.html
 
 clean:
-	rm -f embroidermodder_manual.aux
+	rm -f *.aux *.synctex.gz *.bak *.log
 	rm -f embroidermodder_manual.bbl
 	rm -f embroidermodder_manual.blg
 	rm -f embroidermodder_manual.cp
 	rm -f embroidermodder_manual.cps
-	rm -f embroidermodder_manual.log
 	rm -f embroidermodder_manual.out
 	rm -f embroidermodder_manual.toc
